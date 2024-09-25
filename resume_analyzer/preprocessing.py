@@ -5,6 +5,7 @@ from nltk.tokenize import word_tokenize
 
 class TextCleaner:
     """ """
+
     def __init__(self):
         # TODO: Download necessary NLTK data
         # nltk.download('punkt')
