@@ -10,14 +10,29 @@ class DocumentParser:
         pass
 
     def parse_pdf(self, file_path):
+        """
+
+        :param file_path: 
+
+        """
         # TODO: Implement PDF parsing
         pass
 
     def parse_docx(self, file_path):
+        """
+
+        :param file_path: 
+
+        """
         # TODO: Implement DOCX parsing
         pass
 
     def parse_document(self, file_path):
+        """
+
+        :param file_path: 
+
+        """
         # TODO: Implement main parsing method
         # Detect file type and call appropriate parsing method
         print(file_path)
