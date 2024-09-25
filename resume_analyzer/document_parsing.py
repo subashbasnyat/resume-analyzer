@@ -1,6 +1,7 @@
 import PyPDF2
 import docx
 
+
 class DocumentParser:
     """Class for parsing resumes and extracting relevant information"""
 

@@ -37,6 +37,7 @@ class TextCleaner:
         print("Text for Cleaning: ", text)
         return "Not implemented"
 
+
 if __name__ == "__main__":
     # TODO: Add test code or example usage
     pass
