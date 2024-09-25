@@ -12,7 +12,7 @@ class DocumentParser:
     def parse_pdf(self, file_path):
         """
 
-        :param file_path: 
+        :param file_path:
 
         """
         # TODO: Implement PDF parsing
@@ -21,7 +21,7 @@ class DocumentParser:
     def parse_docx(self, file_path):
         """
 
-        :param file_path: 
+        :param file_path:
 
         """
         # TODO: Implement DOCX parsing
@@ -30,7 +30,7 @@ class DocumentParser:
     def parse_document(self, file_path):
         """
 
-        :param file_path: 
+        :param file_path:
 
         """
         # TODO: Implement main parsing method

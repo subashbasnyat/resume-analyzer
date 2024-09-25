@@ -15,7 +15,7 @@ class TextCleaner:
     def remove_stopwords(self, text):
         """
 
-        :param text: 
+        :param text:
 
         """
         # TODO: Implement stopword removal using self.stop_words
@@ -24,7 +24,7 @@ class TextCleaner:
     def remove_special_characters(self, text):
         """
 
-        :param text: 
+        :param text:
 
         """
         # TODO: Implement special character removal
@@ -33,7 +33,7 @@ class TextCleaner:
     def remove_punctuation(self, text):
         """
 
-        :param text: 
+        :param text:
 
         """
         # TODO: Implement punctuation removal
@@ -42,7 +42,7 @@ class TextCleaner:
     def lowercase_text(self, text):
         """
 
-        :param text: 
+        :param text:
 
         """
         # TODO: Implement text lowercasing
@@ -51,7 +51,7 @@ class TextCleaner:
     def tokenize(self, text):
         """
 
-        :param text: 
+        :param text:
 
         """
         # TODO: Implement tokenization using NLTK's word_tokenize
@@ -60,7 +60,7 @@ class TextCleaner:
     def clean_text(self, text):
         """
 
-        :param text: 
+        :param text:
 
         """
         # TODO: Implement the main cleaning method
