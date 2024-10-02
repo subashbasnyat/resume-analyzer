@@ -41,7 +41,7 @@ class DocumentParser:
         # Join paragraphs and table text with newlines
         text = "\n".join(fullText)
         # Replace multiple spaces/newlines with a single space
-        cleaned_text = re.sub(r'\s+', ' ', text)
+        cleaned_text = re.sub(r"\s+", " ", text)
 
         return cleaned_text.strip()  # Strip any leading/trailing spaces
 
