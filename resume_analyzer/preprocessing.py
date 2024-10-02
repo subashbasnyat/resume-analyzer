@@ -39,11 +39,6 @@ class TextCleaner:
         cleaned_tokens = ' '.join(tokens)
         return cleaned_tokens
 
-
-    def remove_punctuation(self, text):
-        # TODO: Implement punctuation removal
-        pass
-
     def lowercase_text(self, text):
         # TODO: Implement text lowercasing
         #using lower() function to change the text into lower case
@@ -61,7 +56,9 @@ class TextCleaner:
     def clean_text(self, text):
         # TODO: Implement the main cleaning method
         # This should call the other methods in the appropriate order
-        text_after_tokenization = self.tokenize(text)
+        lower_case = self.lowercase_text(text)
+        remove_special_characters = self.remove_special_characters(lower_case)
+        text_after_tokenization = self.tokenize(remove_special_characters)
         text_after_stopword_removal = self.remove_stopwords(text_after_tokenization)
         return text_after_stopword_removal
 

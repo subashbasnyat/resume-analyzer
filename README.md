@@ -9,8 +9,16 @@ extracting and matching resume data to job descriptions.
 ```bash
 pip install -r requirements.txt
 ```
+2. Download punkt-tab
+```bash
+nltk.download('punkt_tab')
+```
+3. Download stopwords
+```bash
+nltk.download('stopwords')
+```
 
-2. Run the processing script
+4. Run the processing script
 ```bash
 python process.py
 ```
