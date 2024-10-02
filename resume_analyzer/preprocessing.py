@@ -1,4 +1,5 @@
 import nltk
+from nltk import regexp_tokenize
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
@@ -17,6 +18,17 @@ class TextCleaner:
 
     def remove_special_characters(self, text):
         # TODO: Implement special character removal
+        """"Function to remove special charactes"""
+
+        # \w+ it matches alphanumeric characters and underscore
+        pattern = r'\w+'
+
+        #tokenizing the text based on the pattern
+        tokens = regexp_tokenize(text, pattern)
+
+        #Joining the token
+        cleaned_tokens = ' '.join(tokens)
+        return cleaned_tokens
         pass
 
     def remove_punctuation(self, text):
@@ -25,6 +37,8 @@ class TextCleaner:
 
     def lowercase_text(self, text):
         # TODO: Implement text lowercasing
+        #using lower() function to change the text into lower case
+        return text.lower()
         pass
 
     def tokenize(self, text):
