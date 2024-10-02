@@ -16,6 +16,7 @@ class TextCleaner:
 
         :param text: str: The string from which stop words will be removed.
         :returns: str: The cleaned string without stop words.
+
         """
         doc = self.nlp(text)
         tokens = [token.text for token in doc if not token.is_stop]
@@ -26,6 +27,7 @@ class TextCleaner:
 
         :param text: str: The string from which special characters will be removed.
         :returns: str: The cleaned string without special characters.
+
         """
         pattern = r"\w+"
         tokens = re.findall(pattern, text)
@@ -36,6 +38,7 @@ class TextCleaner:
 
         :param text: str: The string to be converted to lowercase.
         :returns: str: The lowercased string.
+
         """
         return text.lower()
 
@@ -44,6 +47,7 @@ class TextCleaner:
 
         :param text: str: The string to be tokenized.
         :returns: list: A list of token strings.
+
         """
         doc = self.tokenizer(text)
         return [token.text for token in doc]
@@ -53,6 +57,7 @@ class TextCleaner:
 
         :param text: str: The string to be cleaned.
         :returns: list: A list of cleaned and tokenized words.
+
         """
         lowercased = self.lowercase_text(text)
         no_special_chars = self.remove_special_characters(lowercased)
