@@ -29,7 +29,7 @@ class TextCleaner:
         #Joining the token
         cleaned_tokens = ' '.join(tokens)
         return cleaned_tokens
-        pass
+
 
     def remove_punctuation(self, text):
         # TODO: Implement punctuation removal
@@ -39,7 +39,7 @@ class TextCleaner:
         # TODO: Implement text lowercasing
         #using lower() function to change the text into lower case
         return text.lower()
-        pass
+
 
     def tokenize(self, text):
         # TODO: Implement tokenization using NLTK's word_tokenize
