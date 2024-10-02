@@ -12,19 +12,21 @@ class DocumentParser:
         pass
 
     def parse_pdf(self, file_path):
+        """
+
+        :param file_path: 
+
+        """
         # TODO: Implement PDF parsing
         pass
 
     def parse_docx(self, file_path):
-        """
-        Extracts, concatenates, and cleans text from paragraphs and tables in a DOCX file,
+        """Extracts, concatenates, and cleans text from paragraphs and tables in a DOCX file,
         removing excessive spaces and empty lines.
 
-        Parameters:
-        file_path (Document): A DOCX document object to extract text from.
+        :param file_path: Document
+        :returns: str: The cleaned text from all paragraphs and tables in the DOCX file.
 
-        Returns:
-        str: The cleaned text from all paragraphs and tables in the DOCX file.
         """
         fullText = []
         doc_file = docx.Document(file_path)
@@ -47,6 +49,11 @@ class DocumentParser:
         return cleaned_text.strip()  # Strip any leading/trailing spaces
 
     def parse_document(self, file_path):
+        """
+
+        :param file_path: 
+
+        """
         # TODO: Implement main parsing method
         # Detect file type and call appropriate parsing method
         doc = self.parse_docx(file_path)
