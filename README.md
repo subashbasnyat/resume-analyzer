@@ -9,6 +9,7 @@ extracting and matching resume data to job descriptions.
 
 ```bash
 pip install -r requirements.txt
+python -m spacy download en_core_web_sm
 ```
 
 2. Download punkt-tab

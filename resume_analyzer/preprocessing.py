@@ -1,5 +1,5 @@
 import re
-
+import unicodedata
 import spacy
 from spacy.lang.en import English
 
@@ -51,6 +51,20 @@ class TextCleaner:
         """
         doc = self.tokenizer(text)
         return [token.text for token in doc]
+    
+    def remove_accented_chars_func(self, text):
+        '''
+        Removes all accented characters from a string, if present
+        
+        Args:
+            text (str): String to which the function is to be applied, string
+        
+        Returns:
+            Clean string without accented characters
+        '''
+        
+        return unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('utf-8', 'ignore')
+
 
     def clean_text(self, text):
         """Applies all cleaning steps to the given text.
@@ -60,10 +74,13 @@ class TextCleaner:
 
         """
         lowercased = self.lowercase_text(text)
-        no_special_chars = self.remove_special_characters(lowercased)
+        remove_accented = self.remove_accented_chars_func(lowercased)
+        no_special_chars = self.remove_special_characters(remove_accented)
         no_stopwords = self.remove_stopwords(no_special_chars)
         tokenized = self.tokenize(no_stopwords)
         return tokenized
+    
+
 
 
 if __name__ == "__main__":
