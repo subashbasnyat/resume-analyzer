@@ -1,6 +1,7 @@
+import re
+
 import spacy
 from spacy.lang.en import English
-import re
 
 
 class TextCleaner:
