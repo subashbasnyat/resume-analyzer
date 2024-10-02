@@ -7,6 +7,7 @@ from nltk.tokenize import word_tokenize
 
 class TextCleaner:
     """ """
+
     def __init__(self):
         # TODO: Download necessary NLTK data
         # nltk.download('punkt')
@@ -22,7 +23,10 @@ class TextCleaner:
 
         """
         # check in lowercase
-        t = [token for token in text if token.lower() not in stopwords.words("english")]
+        t = [
+            token for token in text
+            if token.lower() not in stopwords.words("english")
+        ]
         text = " ".join(t)
         return text
 
@@ -79,7 +83,8 @@ class TextCleaner:
         lower_case = self.lowercase_text(text)
         remove_special_characters = self.remove_special_characters(lower_case)
         text_after_tokenization = self.tokenize(remove_special_characters)
-        text_after_stopword_removal = self.remove_stopwords(text_after_tokenization)
+        text_after_stopword_removal = self.remove_stopwords(
+            text_after_tokenization)
         return text_after_stopword_removal
 
 
