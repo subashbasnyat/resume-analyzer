@@ -1,5 +1,6 @@
 import re
 import unicodedata
+
 import spacy
 from spacy.lang.en import English
 
