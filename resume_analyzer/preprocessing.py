@@ -4,6 +4,7 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 
 
 class TextCleaner:
+    """ """
     def __init__(self):
         # TODO: Download necessary NLTK data
         # nltk.download('punkt')
@@ -12,8 +13,7 @@ class TextCleaner:
         pass
 
     def remove_stopwords(self, text):
-        """
-        Removes stop words (including capitalized ones) from the given string, if present.
+        """Removes stop words (including capitalized ones) from the given string, if present.
 
         :param text: str: The string from which stop words will be removed.
         :returns: str: The cleaned string without stop words.
@@ -25,18 +25,38 @@ class TextCleaner:
         return text
 
     def remove_special_characters(self, text):
+        """
+
+        :param text: 
+
+        """
         # TODO: Implement special character removal
         pass
 
     def remove_punctuation(self, text):
+        """
+
+        :param text: 
+
+        """
         # TODO: Implement punctuation removal
         pass
 
     def lowercase_text(self, text):
+        """
+
+        :param text: 
+
+        """
         # TODO: Implement text lowercasing
         pass
 
     def tokenize(self, text):
+        """
+
+        :param text: 
+
+        """
         words = []
         sentences = sent_tokenize(text)
         for each_sentence in sentences:
@@ -45,6 +65,11 @@ class TextCleaner:
         return words
 
     def clean_text(self, text):
+        """
+
+        :param text: 
+
+        """
         # TODO: Implement the main cleaning method
         # This should call the other methods in the appropriate order
         text_after_tokenization = self.tokenize(text)
