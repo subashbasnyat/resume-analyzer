@@ -1,5 +1,6 @@
 import PyPDF2
 import docx
+import re
 
 class DocumentParser:
     """Class for parsing resumes and extracting relevant information"""
@@ -13,13 +14,39 @@ class DocumentParser:
         pass
 
     def parse_docx(self, file_path):
-        # TODO: Implement DOCX parsing
-        pass
+        """
+        Extracts, concatenates, and cleans text from paragraphs and tables in a DOCX file,
+        removing excessive spaces and empty lines.
+
+        Parameters:
+        file_path (Document): A DOCX document object to extract text from.
+
+        Returns:
+        str: The cleaned text from all paragraphs and tables in the DOCX file.
+        """
+        fullText = []
+        doc_file = docx.Document(file_path)
+
+        # Extract text from paragraphs
+        fullText.extend([para.text for para in doc_file.paragraphs])
+
+        # Extract text from tables
+        for table in doc_file.tables:
+            for row in table.rows:
+                for cell in row.cells:
+                    fullText.append(cell.text)
+
+        # Join all extracted text and clean up whitespace using regex
+        text = "\n".join(fullText)  # Join paragraphs and table text with newlines
+        cleaned_text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces/newlines with a single space
+
+        return cleaned_text.strip()  # Strip any leading/trailing spaces
 
     def parse_document(self, file_path):
         # TODO: Implement main parsing method
         # Detect file type and call appropriate parsing method
-        print(file_path)
+        doc = self.parse_docx(file_path)
+        print(doc)
         return "Not implemented"
 
 
