@@ -21,23 +21,22 @@ class TextCleaner:
 
         """
         # check in lowercase
-        t = [token for token in text if token.lower(
-        ) not in stopwords.words("english")]
+        t = [token for token in text if token.lower() not in stopwords.words("english")]
         text = " ".join(t)
         return text
 
     def remove_special_characters(self, text):
         # TODO: Implement special character removal
-        """"Function to remove special charactes"""
+        """ "Function to remove special charactes"""
 
         # \w+ it matches alphanumeric characters and underscore
-        pattern = r'\w+'
+        pattern = r"\w+"
 
         # tokenizing the text based on the pattern
         tokens = regexp_tokenize(text, pattern)
 
         # Joining the token
-        cleaned_tokens = ' '.join(tokens)
+        cleaned_tokens = " ".join(tokens)
         return cleaned_tokens
 
     def lowercase_text(self, text):
@@ -59,8 +58,7 @@ class TextCleaner:
         lower_case = self.lowercase_text(text)
         remove_special_characters = self.remove_special_characters(lower_case)
         text_after_tokenization = self.tokenize(remove_special_characters)
-        text_after_stopword_removal = self.remove_stopwords(
-            text_after_tokenization)
+        text_after_stopword_removal = self.remove_stopwords(text_after_tokenization)
         return text_after_stopword_removal
 
 
