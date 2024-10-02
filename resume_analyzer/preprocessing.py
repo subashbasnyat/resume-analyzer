@@ -29,7 +29,7 @@ class TextCleaner:
     def remove_special_characters(self, text):
         """
 
-        :param text: 
+        :param text:
 
         """
         # TODO: Implement special character removal
@@ -48,7 +48,7 @@ class TextCleaner:
     def lowercase_text(self, text):
         """
 
-        :param text: 
+        :param text:
 
         """
         # TODO: Implement text lowercasing
@@ -58,7 +58,7 @@ class TextCleaner:
     def tokenize(self, text):
         """
 
-        :param text: 
+        :param text:
 
         """
         words = []
@@ -71,7 +71,7 @@ class TextCleaner:
     def clean_text(self, text):
         """
 
-        :param text: 
+        :param text:
 
         """
         # TODO: Implement the main cleaning method
