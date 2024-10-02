@@ -1,6 +1,7 @@
-import PyPDF2
-import docx
 import re
+
+import docx
+import PyPDF2
 
 
 class DocumentParser:
