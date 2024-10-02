@@ -1,19 +1,15 @@
-import nltk
-from nltk import regexp_tokenize
-from nltk.corpus import stopwords
-from nltk.tokenize import sent_tokenize
-from nltk.tokenize import word_tokenize
+import re
+
+import spacy
+from spacy.lang.en import English
 
 
 class TextCleaner:
-    """ """
+    """A class for cleaning and processing text data."""
 
     def __init__(self):
-        # TODO: Download necessary NLTK data
-        # nltk.download('punkt')
-        # nltk.download('stopwords')
-        # self.stop_words = set(stopwords.words('english'))
-        pass
+        self.nlp = spacy.load("en_core_web_sm")
+        self.tokenizer = English().tokenizer
 
     def remove_stopwords(self, text):
         """Removes stop words (including capitalized ones) from the given string, if present.
@@ -22,70 +18,52 @@ class TextCleaner:
         :returns: str: The cleaned string without stop words.
 
         """
-        # check in lowercase
-        t = [
-            token for token in text
-            if token.lower() not in stopwords.words("english")
-        ]
-        text = " ".join(t)
-        return text
+        doc = self.nlp(text)
+        tokens = [token.text for token in doc if not token.is_stop]
+        return " ".join(tokens)
 
     def remove_special_characters(self, text):
+        """Removes special characters from the given string.
+
+        :param text: str: The string from which special characters will be removed.
+        :returns: str: The cleaned string without special characters.
+
         """
-
-        :param text:
-
-        """
-        # TODO: Implement special character removal
-        """ "Function to remove special charactes"""
-
-        # \w+ it matches alphanumeric characters and underscore
         pattern = r"\w+"
-
-        # tokenizing the text based on the pattern
-        tokens = regexp_tokenize(text, pattern)
-
-        # Joining the token
-        cleaned_tokens = " ".join(tokens)
-        return cleaned_tokens
+        tokens = re.findall(pattern, text)
+        return " ".join(tokens)
 
     def lowercase_text(self, text):
-        """
+        """Converts the given text to lowercase.
 
-        :param text:
+        :param text: str: The string to be converted to lowercase.
+        :returns: str: The lowercased string.
 
         """
-        # TODO: Implement text lowercasing
-        # using lower() function to change the text into lower case
         return text.lower()
 
     def tokenize(self, text):
-        """
+        """Tokenizes the given text using spaCy.
 
-        :param text:
+        :param text: str: The string to be tokenized.
+        :returns: list: A list of token strings.
 
         """
-        words = []
-        sentences = sent_tokenize(text)
-        for each_sentence in sentences:
-            n_words = word_tokenize(each_sentence)
-            words.extend(n_words)
-        return words
+        doc = self.tokenizer(text)
+        return [token.text for token in doc]
 
     def clean_text(self, text):
-        """
+        """Applies all cleaning steps to the given text.
 
-        :param text:
+        :param text: str: The string to be cleaned.
+        :returns: list: A list of cleaned and tokenized words.
 
         """
-        # TODO: Implement the main cleaning method
-        # This should call the other methods in the appropriate order
-        lower_case = self.lowercase_text(text)
-        remove_special_characters = self.remove_special_characters(lower_case)
-        text_after_tokenization = self.tokenize(remove_special_characters)
-        text_after_stopword_removal = self.remove_stopwords(
-            text_after_tokenization)
-        return text_after_stopword_removal
+        lowercased = self.lowercase_text(text)
+        no_special_chars = self.remove_special_characters(lowercased)
+        no_stopwords = self.remove_stopwords(no_special_chars)
+        tokenized = self.tokenize(no_stopwords)
+        return tokenized
 
 
 if __name__ == "__main__":
