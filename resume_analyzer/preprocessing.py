@@ -53,7 +53,7 @@ class TextCleaner:
         return [token.text for token in doc]
 
     def remove_accented_chars_func(self, text):
-        '''
+        """
         Removes all accented characters from a string, if present
 
         Args:
@@ -61,9 +61,13 @@ class TextCleaner:
 
         Returns:
             Clean string without accented characters
-        '''
+        """
 
-        return unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('utf-8', 'ignore')
+        return (
+            unicodedata.normalize("NFKD", text)
+            .encode("ascii", "ignore")
+            .decode("utf-8", "ignore")
+        )
 
     def clean_text(self, text):
         """Applies all cleaning steps to the given text.
