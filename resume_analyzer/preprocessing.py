@@ -26,7 +26,7 @@ class TextCleaner:
         :param text: str: The string from which special characters will be removed.
         :returns: str: The cleaned string without special characters.
         """
-        pattern = r'\w+'
+        pattern = r"\w+"
         tokens = re.findall(pattern, text)
         return " ".join(tokens)
 
