@@ -62,11 +62,9 @@ class TextCleaner:
 
         """
 
-        return (
-            unicodedata.normalize("NFKD", text)
-            .encode("ascii", "ignore")
-            .decode("utf-8", "ignore")
-        )
+        return (unicodedata.normalize("NFKD",
+                                      text).encode("ascii", "ignore").decode(
+                                          "utf-8", "ignore"))
 
     def clean_text(self, text):
         """Applies all cleaning steps to the given text.
