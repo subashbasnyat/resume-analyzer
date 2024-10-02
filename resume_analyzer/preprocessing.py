@@ -54,14 +54,12 @@ class TextCleaner:
         return [token.text for token in doc]
 
     def remove_accented_chars_func(self, text):
-        """
-        Removes all accented characters from a string, if present
+        """Removes all accented characters from a string, if present
 
-        Args:
-            text (str): String to which the function is to be applied, string
+        :param text: String to which the function is to be applied, string
+        :type text: str
+        :returns: Clean string without accented characters
 
-        Returns:
-            Clean string without accented characters
         """
 
         return (
