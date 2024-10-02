@@ -2,6 +2,7 @@ import PyPDF2
 import docx
 import re
 
+
 class DocumentParser:
     """Class for parsing resumes and extracting relevant information"""
 
@@ -37,8 +38,10 @@ class DocumentParser:
                     fullText.append(cell.text)
 
         # Join all extracted text and clean up whitespace using regex
-        text = "\n".join(fullText)  # Join paragraphs and table text with newlines
-        cleaned_text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces/newlines with a single space
+        # Join paragraphs and table text with newlines
+        text = "\n".join(fullText)
+        # Replace multiple spaces/newlines with a single space
+        cleaned_text = re.sub(r'\s+', ' ', text)
 
         return cleaned_text.strip()  # Strip any leading/trailing spaces
 
