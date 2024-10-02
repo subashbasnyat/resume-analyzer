@@ -20,8 +20,7 @@ class TextCleaner:
 
         """
         # check in lowercase
-        t = [token for token in text if token.lower(
-        ) not in stopwords.words("english")]
+        t = [token for token in text if token.lower() not in stopwords.words("english")]
         text = " ".join(t)
         return text
 
@@ -49,8 +48,7 @@ class TextCleaner:
         # TODO: Implement the main cleaning method
         # This should call the other methods in the appropriate order
         text_after_tokenization = self.tokenize(text)
-        text_after_stopword_removal = self.remove_stopwords(
-            text_after_tokenization)
+        text_after_stopword_removal = self.remove_stopwords(text_after_tokenization)
         return text_after_stopword_removal
 
 
