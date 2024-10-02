@@ -45,8 +45,8 @@ class DocumentParser:
         text = "\n".join(fullText)
         # Replace multiple spaces/newlines with a single space
         cleaned_text = re.sub(r"\s+", " ", text)
-
-        return cleaned_text.strip()  # Strip any leading/trailing spaces
+        # Strip any leading/trailing spaces
+        return cleaned_text.strip()
 
     def parse_document(self, file_path):
         """
@@ -57,8 +57,7 @@ class DocumentParser:
         # TODO: Implement main parsing method
         # Detect file type and call appropriate parsing method
         doc = self.parse_docx(file_path)
-        print(doc)
-        return "Not implemented"
+        return doc
 
 
 if __name__ == "__main__":
