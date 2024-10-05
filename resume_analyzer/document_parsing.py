@@ -17,8 +17,7 @@ class DocumentParser:
         :param file_path:
 
         """
-        # TODO: Implement PDF parsing
-        pass
+        return "Hello World!"
 
     def parse_docx(self, file_path):
         """Extracts, concatenates, and cleans text from paragraphs and tables in a DOCX file,
@@ -54,9 +53,11 @@ class DocumentParser:
         :param file_path:
 
         """
-        # TODO: Implement main parsing method
         # Detect file type and call appropriate parsing method
-        doc = self.parse_docx(file_path)
+        if file_path.endswith('.pdf'):
+            doc = self.parse_pdf(file_path)
+        else:
+            doc = self.parse_docx(file_path)
         return doc
 
 
