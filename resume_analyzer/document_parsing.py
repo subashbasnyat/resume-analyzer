@@ -14,7 +14,7 @@ class DocumentParser:
     def parse_pdf(self, file_path):
         """
 
-        :param file_path:
+        :param file_path: 
 
         """
         return "Hello World!"
@@ -50,7 +50,7 @@ class DocumentParser:
     def parse_document(self, file_path):
         """
 
-        :param file_path:
+        :param file_path: 
 
         """
         # Detect file type and call appropriate parsing method
