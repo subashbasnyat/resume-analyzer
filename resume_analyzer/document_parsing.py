@@ -54,7 +54,7 @@ class DocumentParser:
 
         """
         # Detect file type and call appropriate parsing method
-        if file_path.endswith('.pdf'):
+        if file_path.endswith(".pdf"):
             doc = self.parse_pdf(file_path)
         else:
             doc = self.parse_docx(file_path)
