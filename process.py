@@ -4,7 +4,12 @@ from resume_analyzer.preprocessing import TextCleaner
 document_parser = DocumentParser()
 text_cleaner = TextCleaner()
 
-text = document_parser.parse_document(
+
+resume = document_parser.parse_document(
     "data/Resumes/web_developer_resume_sample.docx")
-cleaned_text = text_cleaner.clean_text(text)
-print("Cleaned Text: ", cleaned_text)
+cleaned_resume = text_cleaner.clean_text(resume)
+jd = document_parser.parse_document(
+    "data/JDs/web_developer_job_description_sample.docx")
+cleaned_jd = text_cleaner.clean_text(jd)
+print("Cleaned Resume: ", cleaned_resume)
+print("Cleaned JD: ", cleaned_jd)
