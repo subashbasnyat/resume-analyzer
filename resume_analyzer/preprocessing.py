@@ -1,8 +1,9 @@
 import re
 import unicodedata
-
+from bs4 import BeautifulSoup
 import spacy
 from spacy.lang.en import English
+import contractions
 
 
 class TextCleaner:
@@ -12,8 +13,53 @@ class TextCleaner:
         self.nlp = spacy.load("en_core_web_sm")
         self.tokenizer = English().tokenizer
 
+    def lowercase_text(self, text):
+        """Converts the given text to lowercase.
+
+        :param text: str: The string to be converted to lowercase.
+        :returns: str: The lowercased string.
+
+        """
+        return text.lower()
+
+    def remove_html_tags_func(self, text):
+        """Removes HTML-Tags from a string, if present.
+
+        :param text: str: The string from which HTML tags will be removed.
+        :returns: str: The cleaned string without HTML tags.
+
+        """
+        return BeautifulSoup(text, 'html.parser').get_text()
+
+    def remove_accented_chars_func(self, text):
+        """Removes all accented characters from a string, if present.
+
+        :param text: str: The string from which accented characters will be removed.
+        :returns: str: The cleaned string without accented characters.
+
+        """
+        return unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('utf-8', 'ignore')
+
+    def remove_punctuation_func(self, text):
+        """Removes all punctuation from a string.
+
+        :param text: str: The string from which punctuation will be removed.
+        :returns: str: The cleaned string without punctuation.
+
+        """
+        return re.sub(r'[^a-zA-Z0-9]', ' ', text)
+
+    def remove_extra_whitespaces_func(self, text):
+        """Removes extra whitespaces from a string, if present.
+
+        :param text: str: The string from which extra whitespaces will be removed.
+        :returns: str: The cleaned string without extra whitespaces.
+
+        """
+        return re.sub(r'^\s*|\s\s*', ' ', text).strip()
+
     def remove_stopwords(self, text):
-        """Removes stop words (including capitalized ones) from the given string, if present.
+        """Removes stop words (including capitalized ones) from the given string.
 
         :param text: str: The string from which stop words will be removed.
         :returns: str: The cleaned string without stop words.
@@ -34,14 +80,14 @@ class TextCleaner:
         tokens = re.findall(pattern, text)
         return " ".join(tokens)
 
-    def lowercase_text(self, text):
-        """Converts the given text to lowercase.
+    def expand_contractions(self, text):
+        """Expands contractions in the given text.
 
-        :param text: str: The string to be converted to lowercase.
-        :returns: str: The lowercased string.
+        :param text: str: The string where contractions will be expanded.
+        :returns: str: The string with expanded contractions.
 
         """
-        return text.lower()
+        return contractions.fix(text)
 
     def tokenize(self, text):
         """Tokenizes the given text using spaCy.
@@ -53,19 +99,6 @@ class TextCleaner:
         doc = self.tokenizer(text)
         return [token.text for token in doc]
 
-    def remove_accented_chars_func(self, text):
-        """Removes all accented characters from a string, if present
-
-        :param text: String to which the function is to be applied, string
-        :type text: str
-        :returns: Clean string without accented characters
-
-        """
-
-        return (unicodedata.normalize("NFKD",
-                                      text).encode("ascii", "ignore").decode(
-                                          "utf-8", "ignore"))
-
     def clean_text(self, text):
         """Applies all cleaning steps to the given text.
 
@@ -74,9 +107,12 @@ class TextCleaner:
 
         """
         lowercased = self.lowercase_text(text)
-        remove_accented = self.remove_accented_chars_func(lowercased)
-        no_special_chars = self.remove_special_characters(remove_accented)
-        no_stopwords = self.remove_stopwords(no_special_chars)
+        expanded = self.expand_contractions(lowercased)
+        no_html = self.remove_html_tags_func(expanded)
+        no_accented_chars = self.remove_accented_chars_func(no_html)
+        no_punct = self.remove_punctuation_func(no_accented_chars)
+        no_extra_whitespaces = self.remove_extra_whitespaces_func(no_punct)
+        no_stopwords = self.remove_stopwords(no_extra_whitespaces)
         tokenized = self.tokenize(no_stopwords)
         return tokenized
 
