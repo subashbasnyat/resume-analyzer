@@ -6,5 +6,5 @@ text_cleaner = TextCleaner()
 
 text = document_parser.parse_document(
     "data/Resumes/web_developer_resume_sample.docx")
-cleaned_text = text_cleaner.clean_text(text)
-print("Cleaned Text: ", cleaned_text)
+experiences = text_cleaner.extract_experience_details(text)
+print("Experiences: ", experiences)
