@@ -2,3 +2,5 @@ nltk
 PyPDF2
 python-docx
 spacy
+beautifulsoup4
+contractions

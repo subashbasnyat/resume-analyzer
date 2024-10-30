@@ -1,10 +1,11 @@
 import re
 import unicodedata
-from datetime import datetime
 
+from bs4 import BeautifulSoup
 import spacy
 from spacy.lang.en import English
-
+import contractions
+from datetime import datetime
 
 class TextCleaner:
     """A class for cleaning and processing text data."""
@@ -13,8 +14,53 @@ class TextCleaner:
         self.nlp = spacy.load("en_core_web_sm")
         self.tokenizer = English().tokenizer
 
+    def lowercase_text(self, text):
+        """Converts the given text to lowercase.
+
+        :param text: str: The string to be converted to lowercase.
+        :returns: str: The lowercased string.
+
+        """
+        return text.lower()
+
+    def remove_html_tags_func(self, text):
+        """Removes HTML-Tags from a string, if present.
+
+        :param text: str: The string from which HTML tags will be removed.
+        :returns: str: The cleaned string without HTML tags.
+
+        """
+        return BeautifulSoup(text, 'html.parser').get_text()
+
+    def remove_accented_chars_func(self, text):
+        """Removes all accented characters from a string, if present.
+
+        :param text: str: The string from which accented characters will be removed.
+        :returns: str: The cleaned string without accented characters.
+
+        """
+        return unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('utf-8', 'ignore')
+
+    def remove_punctuation_func(self, text):
+        """Removes all punctuation from a string.
+
+        :param text: str: The string from which punctuation will be removed.
+        :returns: str: The cleaned string without punctuation.
+
+        """
+        return re.sub(r'[^a-zA-Z0-9]', ' ', text)
+
+    def remove_extra_whitespaces_func(self, text):
+        """Removes extra whitespaces from a string, if present.
+
+        :param text: str: The string from which extra whitespaces will be removed.
+        :returns: str: The cleaned string without extra whitespaces.
+
+        """
+        return re.sub(r'^\s*|\s\s*', ' ', text).strip()
+
     def remove_stopwords(self, text):
-        """Removes stop words (including capitalized ones) from the given string, if present.
+        """Removes stop words (including capitalized ones) from the given string.
 
         :param text: str: The string from which stop words will be removed.
         :returns: str: The cleaned string without stop words.
@@ -35,14 +81,14 @@ class TextCleaner:
         tokens = re.findall(pattern, text)
         return " ".join(tokens)
 
-    def lowercase_text(self, text):
-        """Converts the given text to lowercase.
+    def expand_contractions(self, text):
+        """Expands contractions in the given text.
 
-        :param text: str: The string to be converted to lowercase.
-        :returns: str: The lowercased string.
+        :param text: str: The string where contractions will be expanded.
+        :returns: str: The string with expanded contractions.
 
         """
-        return text.lower()
+        return contractions.fix(text)
 
     def tokenize(self, text):
         """Tokenizes the given text using spaCy.
@@ -54,19 +100,6 @@ class TextCleaner:
         doc = self.tokenizer(text)
         return [token.text for token in doc]
 
-    def remove_accented_chars_func(self, text):
-        """Removes all accented characters from a string, if present
-
-        :param text: String to which the function is to be applied, string
-        :type text: str
-        :returns: Clean string without accented characters
-
-        """
-
-        return (unicodedata.normalize("NFKD",
-                                      text).encode("ascii", "ignore").decode(
-                                          "utf-8", "ignore"))
-
     def clean_text(self, text):
         """Applies all cleaning steps to the given text.
 
@@ -75,9 +108,12 @@ class TextCleaner:
 
         """
         lowercased = self.lowercase_text(text)
-        remove_accented = self.remove_accented_chars_func(lowercased)
-        no_special_chars = self.remove_special_characters(remove_accented)
-        no_stopwords = self.remove_stopwords(no_special_chars)
+        expanded = self.expand_contractions(lowercased)
+        no_html = self.remove_html_tags_func(expanded)
+        no_accented_chars = self.remove_accented_chars_func(no_html)
+        no_punct = self.remove_punctuation_func(no_accented_chars)
+        no_extra_whitespaces = self.remove_extra_whitespaces_func(no_punct)
+        no_stopwords = self.remove_stopwords(no_extra_whitespaces)
         tokenized = self.tokenize(no_stopwords)
         return tokenized
 
@@ -143,12 +179,18 @@ class TextCleaner:
                 'years_of_experience': experience_years
             })
         return experiences
-
+    
     def extract_experience_details(self, text):
-        company_name_pattern = r"^([SA-Za-z\s,.&]+)\n"  # Adjusted to handle company names properly
+        
+        # Focus on the "Experience" section only
+        experience_section = re.search(r"Experience\s(.+?)(Education|$)", text, re.DOTALL)
+        if experience_section:
+            text = experience_section.group(1).strip()
+        """
+        company_name_pattern = r"^([A-Za-z\s,.&-]+)"  # Adjusted to handle company names properly
         role_pattern = r"(?:\n)?([A-Za-z\s\-]+)\s\|"  # This handles the roles like "Front-end web developer |"
         start_date_pattern = r"\|\s?([A-Za-z]+\s\d{4})\s[–\-—]"  # Adjusted to match the date format
-        end_date_pattern = r"[–\-—]\s([A-Za-z]+\s\d{3,4})|Present"  # End date pattern that captures dates including present
+        end_date_pattern = r"[–\-—]\s([A-Za-z]+\s\d{4})|Present"  # End date pattern that captures dates including present
         
         
         # Split experiences based on the double newlines separating them
@@ -157,6 +199,8 @@ class TextCleaner:
         parsed_experiences = []
         
         for exp in experiences:
+            
+            # Process each line separately within an experience block
             lines = exp.splitlines()
             
             # Extract company name
@@ -167,14 +211,14 @@ class TextCleaner:
             # Extract role
             role_match = re.search(role_pattern, exp, re.MULTILINE)
             role = role_match.group(1).strip() if role_match else None
-            
-            print("Role: ", role)
 
             # Extract start date
+            # start_date_match = re.search(start_date_pattern, exp)
             start_date_match = re.search(start_date_pattern, exp)
             start_date = start_date_match.group(1).strip() if start_date_match else None
             
             # Extract end date
+            # end_date_match = re.search(end_date_pattern, exp)
             end_date_match = re.search(end_date_pattern, exp)
             end_date = end_date_match.group(1).strip() if end_date_match else None
             
@@ -208,6 +252,42 @@ class TextCleaner:
                 'years_of_experience': experience_years
             })
         
+        return parsed_experiences
+    """
+        # Adjusted patterns for extracting details
+        experience_pattern = r"^(.*?)\s+([A-Za-z\s\-]+)\s*\|\s*([A-Za-z]+\s\d{4})\s*[–\-—]\s*([A-Za-z]+\s\d{4}|Present)"  # Matches company, role, start, and end date
+        
+        # Split experiences based on double newlines separating them
+        matches = re.findall(experience_pattern, text)
+        
+        parsed_experiences = []
+        
+        for match in matches:
+            # Find all matches for the experience pattern in the current experience block
+                           
+            company_name = match[0].strip()
+            role = match[1].strip()
+            start_date = match[2].strip()
+            end_date = match[3].strip()
+            
+            # Parse the start and end dates to calculate years of experience
+            try:
+                start_date_obj = datetime.strptime(start_date, '%B %Y')
+                end_date_obj = datetime.now() if end_date.lower() == 'present' else datetime.strptime(end_date, '%B %Y')
+                
+                # Calculate years of experience
+                experience_years = round((end_date_obj - start_date_obj).days / 365.25, 2)
+            except ValueError:
+                # If dates don't parse, set years_of_experience to None
+                experience_years = None
+            # Add the extracted details to the result
+            parsed_experiences.append({
+                "company_name": company_name,
+                "role": role,
+                "start_date": start_date,
+                "end_date": end_date,
+                'years_of_experience': experience_years
+            })
         return parsed_experiences
 
 if __name__ == "__main__":

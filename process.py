@@ -4,7 +4,8 @@ from resume_analyzer.preprocessing import TextCleaner
 document_parser = DocumentParser()
 text_cleaner = TextCleaner()
 
-text = document_parser.parse_document(
+
+resume = document_parser.parse_document(
     "data/Resumes/web_developer_resume_sample.docx")
-experiences = text_cleaner.extract_experience_details(text)
-print("Experiences: ", experiences)
+cleaned_text = text_cleaner.extract_experience_details(resume)
+print("Cleaned Text: ", cleaned_text)
