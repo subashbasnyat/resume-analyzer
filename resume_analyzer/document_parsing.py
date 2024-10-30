@@ -17,6 +17,36 @@ class DocumentParser:
         :param file_path:
 
         """
+        with open(pdf_path, 'rb') as file:
+            print("Reading file data..")
+            pdf_reader = PyPDF2.PdfReader(file)
+            text = ""
+
+            # Read each page and extract text
+            for page in pdf_reader.pages:
+                text += page.extract_text()
+        print(text)
+         #Extract Education
+        lines = text.splitlines()
+        education_lines = []
+        capturing = False
+
+        for line in lines:
+            if 'EDUCATION' in line:
+                capturing = True
+                continue  # Skip the line with 'EDUCATION'
+            if 'SKILLS' in line or 'WORK EXPERIENCE' in line:
+                break  # Stop capturing when reaching 'SKILLS' or 'WORK EXPERIENCE'
+            if capturing:
+                education_lines.append(line.strip())
+
+        if education_lines:
+            print("\nEDUCATION:")
+            print("-" * 50)
+            print("\n".join(education_lines))
+        else:
+            print("\nEDUCATION section not found.")
+
         return "Hello World!"
 
     def parse_docx(self, file_path):
