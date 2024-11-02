@@ -4,3 +4,6 @@ python-docx
 spacy
 beautifulsoup4
 contractions
+pandas
+flashtext
+scikit-learn
