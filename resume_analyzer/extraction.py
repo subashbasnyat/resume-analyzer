@@ -1,11 +1,11 @@
 import re
+from datetime import datetime
 
 
 class CandidateExtractor:
     """Class for extracting specific information from resumes or job descriptions."""
 
     def __init__(self):
-        # TODO: Initialize necessary attributes, if any
         pass
 
     def extract_name(self, text):
@@ -13,7 +13,6 @@ class CandidateExtractor:
 
         :param text: str: The text from which the name will be extracted.
         :returns: str: The candidate's name, if found.
-
         """
         # TODO: Implement name extraction logic
         pass
@@ -23,9 +22,8 @@ class CandidateExtractor:
 
         :param text: str: The text from which the phone number will be extracted.
         :returns: str: The candidate's phone number, if found.
-
         """
-        phone_pattern = r'\+?\d[\d -]{8,}\d'
+        phone_pattern = r'\+?\d{1,4}?[\s.-]?\(?\d{1,4}?\)?[\s.-]?\d{1,4}[\s.-]?\d{1,4}[\s.-]?\d{1,9}'
         phone_match = re.search(phone_pattern, text)
         return phone_match.group() if phone_match else None
 
@@ -34,7 +32,6 @@ class CandidateExtractor:
 
         :param text: str: The text from which the skills will be extracted.
         :returns: list: A list of extracted skills.
-
         """
         # TODO: Use NLP, predefined skill list, or keyword extraction techniques
         pass
@@ -43,62 +40,104 @@ class CandidateExtractor:
         """Extracts employment details (job titles, company names, employment duration) from the given text.
 
         :param text: str: The text from which employment details will be extracted.
-        :returns: dict: A dictionary with job titles, company names, and employment duration.
-
+        :returns: list: A list of dictionaries containing job details.
         """
-        # TODO: Implement logic for extracting job titles, companies, and duration
-        pass
+        # Focus on the "Experience" section only
+        experience_section = re.search(r"Experience\s(.+?)(Education|$)", text, re.DOTALL)
+        if experience_section:
+            text = experience_section.group(1).strip()
+        
+        experience_pattern = r"^(.*?)\s+([A-Za-z\s\-]+)\s*\|\s*([A-Za-z]+\s\d{4})\s*[–\-—]\s*([A-Za-z]+\s\d{4}|Present)"
+        matches = re.findall(experience_pattern, text, re.MULTILINE)
+        
+        parsed_experiences = []
+        
+        for match in matches:
+            company_name = match[0].strip()
+            role = match[1].strip()
+            start_date = match[2].strip()
+            end_date = match[3].strip()
+            
+            try:
+                start_date_obj = datetime.strptime(start_date, '%B %Y')
+                end_date_obj = datetime.now() if end_date.lower() == 'present' else datetime.strptime(end_date, '%B %Y')
+                experience_years = round((end_date_obj - start_date_obj).days / 365.25, 2)
+            except ValueError:
+                experience_years = None
+
+            parsed_experiences.append({
+                "company_name": company_name,
+                "role": role,
+                "start_date": start_date,
+                "end_date": end_date,
+                'years_of_experience': experience_years
+            })
+        
+        return parsed_experiences
 
     def extract_urls(self, text):
         """Extracts URLs (like LinkedIn) from the given text using regex.
 
         :param text: str: The text from which the URLs will be extracted.
         :returns: list: A list of URLs found in the text.
-
         """
-        url_pattern = r'https?://[^\s]+'
-        urls = re.findall(url_pattern, text)
-        return urls
+        linkedin_pattern = r'linkedin\.com\/[a-zA-Z0-9\-_\/]+'
+        linkedin_urls = re.findall(linkedin_pattern, text)
+        
+        # Also keep the general URL pattern for other URLs
+        general_url_pattern = r'https?://[^\s]+'
+        other_urls = [url for url in re.findall(general_url_pattern, text) 
+                     if 'linkedin.com' not in url]
+        
+        return {
+            'linkedin': linkedin_urls[0] if linkedin_urls else None,
+            'other_urls': other_urls
+        }
 
     def extract_email(self, text):
         """Extracts email addresses from the given text using regex.
 
         :param text: str: The text from which the email addresses will be extracted.
         :returns: str: The candidate's email address, if found.
-
         """
         email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
         email_match = re.search(email_pattern, text)
         return email_match.group() if email_match else None
 
     def extract_years_of_experience(self, text):
-        """Extracts years of experience from the given text using regex or keyword patterns.
+        """Extracts years of experience from the given text using regex.
 
         :param text: str: The text from which years of experience will be extracted.
-        :returns: int: The candidate's years of experience, if found.
-
+        :returns: list: List of extracted years of experience mentions.
         """
-        # TODO: Implement logic for extracting years of experience (use regex or NLP parsing)
-        pass
+        experience_pattern = r'(\d+)\s*(?:year|years|yrs)\s*(?:of)?\s*(?:experience)?'
+        experience_matches = re.findall(experience_pattern, text.lower())
+        return [int(years) for years in experience_matches] if experience_matches else None
 
-    def extract_all(self, text):
-        """Extracts all relevant information (name, phone, skills, etc.) from the given text.
+    def extract_contact_info(self, text):
+        """Extracts all contact-related information from the given text.
 
-        :param text: str: The text from which all information will be extracted.
-        :returns: dict: A dictionary with all extracted information.
-
+        :param text: str: The text from which contact information will be extracted.
+        :returns: dict: A dictionary containing all contact information.
         """
         return {
-            'name': self.extract_name(text),
-            'phone_number': self.extract_phone_number(text),
-            'skills': self.extract_skills(text),
-            'employment_details': self.extract_employment_details(text),
-            'urls': self.extract_urls(text),
             'email': self.extract_email(text),
+            'phone': self.extract_phone_number(text),
+            'urls': self.extract_urls(text),
             'years_of_experience': self.extract_years_of_experience(text)
         }
 
+    def extract_all(self, text):
+        """Extracts all relevant information from the given text.
 
-if __name__ == "__main__":
-    # TODO: Add test code or example usage
-    pass
+        :param text: str: The text from which all information will be extracted.
+        :returns: dict: A dictionary with all extracted information.
+        """
+        contact_info = self.extract_contact_info(text)
+        return {
+            'name': self.extract_name(text),
+            'contact_info': contact_info,
+            'employment_details': self.extract_employment_details(text),
+            'skills': self.extract_skills(text)
+        }
+

@@ -1,7 +1,6 @@
 import re
 
 import docx
-import PyPDF2
 import pandas as pd
 from flashtext import KeywordProcessor
 from sklearn.feature_extraction.text import TfidfVectorizer
