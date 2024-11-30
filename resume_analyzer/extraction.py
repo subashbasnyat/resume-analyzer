@@ -1,143 +1,185 @@
 import re
-from datetime import datetime
+import logging
+from typing import Dict, List, Any
 
+import spacy
 
-class CandidateExtractor:
-    """Class for extracting specific information from resumes or job descriptions."""
-
+class InformationExtractor:
     def __init__(self):
-        pass
+        try:
+            # Load spaCy model for NLP tasks
+            self.nlp = spacy.load('en_core_web_sm')
+            self.combined_patterns_path = "data/combined_patterns.jsonl"
+            self.ruler = self.nlp.add_pipe("entity_ruler")
+            self.ruler.from_disk(self.combined_patterns_path)
 
-    def extract_name(self, text):
-        """Extracts the candidate's name from the given text.
+        except Exception as e:
+            logging.error(f"Error loading spaCy model: {str(e)}")
+            raise
 
-        :param text: str: The text from which the name will be extracted.
-        :returns: str: The candidate's name, if found.
-        """
-        # TODO: Implement name extraction logic
-        pass
+        # Regex patterns
+        self.email_pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+        self.phone_pattern = r'\b(?:\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}\b'
+        self.experience_pattern = r'(\d+)\s*\+?\s*(?:year|yr)s?\s*of\s*experience'
 
-    def extract_phone_number(self, text):
-        """Extracts phone number from the given text using regex.
+    def extract_contact_info(self, text: str) -> Dict[str, str]:
+        """Extract contact information from text."""
+        if not text:
+            return {'email': None, 'phone': None, 'location': None}
 
-        :param text: str: The text from which the phone number will be extracted.
-        :returns: str: The candidate's phone number, if found.
-        """
-        phone_pattern = r'\+?\d{1,4}?[\s.-]?\(?\d{1,4}?\)?[\s.-]?\d{1,4}[\s.-]?\d{1,4}[\s.-]?\d{1,9}'
-        phone_match = re.search(phone_pattern, text)
-        return phone_match.group() if phone_match else None
+        # Email extraction
+        email_match = re.search(self.email_pattern, text)
+        email = email_match.group() if email_match else None
 
-    def extract_skills(self, text):
-        """Extracts skills from the given text using a predefined list of skills or keyword matching.
+        # Phone extraction
+        phone_match = re.search(self.phone_pattern, text)
+        phone = phone_match.group() if phone_match else None
 
-        :param text: str: The text from which the skills will be extracted.
-        :returns: list: A list of extracted skills.
-        """
-        # TODO: Use NLP, predefined skill list, or keyword extraction techniques
-        pass
+        # Location extraction
+        doc = self.nlp(text)
+        locations = [ent.text for ent in doc.ents if ent.label_ in ['GPE', 'LOC']]
+        location = locations[0] if locations else None
 
-    def extract_employment_details(self, text):
-        """Extracts employment details (job titles, company names, employment duration) from the given text.
+        return {'email': email, 'phone': phone, 'location': location}
 
-        :param text: str: The text from which employment details will be extracted.
-        :returns: list: A list of dictionaries containing job details.
-        """
-        # Focus on the "Experience" section only
-        experience_section = re.search(r"Experience\s(.+?)(Education|$)", text, re.DOTALL)
-        if experience_section:
-            text = experience_section.group(1).strip()
+    def extract_education(self, text: str) -> List[Dict[str, Any]]:
         
-        experience_pattern = r"^(.*?)\s+([A-Za-z\s\-]+)\s*\|\s*([A-Za-z]+\s\d{4})\s*[–\-—]\s*([A-Za-z]+\s\d{4}|Present)"
-        matches = re.findall(experience_pattern, text, re.MULTILINE)
+        text = text.lower()
+        doc = self.nlp(text)
+        myset = []
+        subset = []
+        for ent in doc.ents:
+            if ent.label_ == "DEGREE":
+                subset.append(ent.text)
+        myset.append(subset)
+        return list(set(subset))
+
+    def extract_skills(self, text: str) -> List[str]:
+        """Extract skills from text using predefined skills list."""
+        doc = self.nlp(text)
+        myset = []
+        subset = []
+        for ent in doc.ents:
+            if ent.label_ == "SKILL":
+                subset.append(ent.text)
+        myset.append(subset)
+        return list(set(subset))
+
+    def extract_experience(self, text: str) -> List[Dict[str, Any]]:
+        """Extract years of experience from text."""
+        experience_matches = re.findall(self.experience_pattern, text, re.IGNORECASE)
         
-        parsed_experiences = []
+        return [{'years': int(years)} for years in experience_matches] if experience_matches else []
+
+    def extract_job_titles(self, text: str) -> List[str]:
+        doc = self.nlp(text)
+        myset = []
+        subset = []
+        for ent in doc.ents:
+            if ent.label_ == "JOB":
+                subset.append(ent.text)
+        myset.append(subset)
+        return list(set(subset))
+
+
+def extract_resume_and_job_description(
+    resume_text: str, 
+    job_description_text: str
+) -> Dict[str, Any]:
+    """Comprehensive extraction of resume and job description."""
+    if not resume_text or not job_description_text:
+        return {'resume': {}, 'job_description': {}}
+
+    extractor = InformationExtractor()
+
+    return {
+        'resume': {
+            'job_titles': extractor.extract_job_titles(resume_text),
+            'contact': extractor.extract_contact_info(resume_text),
+            'education': extractor.extract_education(resume_text),
+            'experience': extractor.extract_experience(resume_text),
+            'skills': extractor.extract_skills(resume_text),
+            'ner': [extractor.nlp(resume_text)],
+        },
+        'job_description': {
+            'job_titles': extractor.extract_job_titles(job_description_text),
+            'education' : extractor.extract_education(job_description_text),
+            'experience': extractor.extract_experience(job_description_text),
+            'skills' : extractor.extract_skills(job_description_text),
+            'ner': [extractor.nlp(job_description_text)]
+        }    
+    }
+
+# Example usage
+if __name__ == "__main__":
+    # Sample texts
+    resume_text = '''
+        John Doe
+        Email: john.doe@email.com
+        Phone: 5551234567
+        New York, NY
+
+        EDUCATION
+        University of Washington
+        Bachelor of Science in Computer Science
+        Graduation: May 2019
+
+        Coursework: Algorithms and Data Structures, Software Engineering, Machine Learning, Cloud Computing
+        Achievements: Dean's List (4 semesters), Computer Science Club President
         
-        for match in matches:
-            company_name = match[0].strip()
-            role = match[1].strip()
-            start_date = match[2].strip()
-            end_date = match[3].strip()
-            
-            try:
-                start_date_obj = datetime.strptime(start_date, '%B %Y')
-                end_date_obj = datetime.now() if end_date.lower() == 'present' else datetime.strptime(end_date, '%B %Y')
-                experience_years = round((end_date_obj - start_date_obj).days / 365.25, 2)
-            except ValueError:
-                experience_years = None
-
-            parsed_experiences.append({
-                "company_name": company_name,
-                "role": role,
-                "start_date": start_date,
-                "end_date": end_date,
-                'years_of_experience': experience_years
-            })
+        EXPERIENCE
+        Senior Software Engineer
+        Tesla, Palo Alto, CA
+        June 2019 - Present
+        • Architectural Leadership: Led the design and implementation of a microservices-based architecture, improving scalability and reducing system downtime by 35%.
+        • CI/CD Automation: Spearheaded the creation of a CI/CD pipeline using Jenkins, integrating automated testing, code quality analysis, and deployment, which decreased time-to-production by 50%.
+        • Mentorship and Training: Mentored 10+ junior engineers, providing guidance on software best practices, code reviews, and technical skill development.
+        • Collaborative Innovation: Partnered with cross-functional teams, including QA, product management, and UI/UX, to deliver high-impact software solutions for Tesla's autonomous driving systems.
+        • Containerization and Orchestration: Developed and deployed containerized applications using Docker and Kubernetes, streamlining deployment processes and improving development environment parity.
+        • Performance Optimization: Identified and resolved bottlenecks in legacy systems, achieving a 20% improvement in system performance.
         
-        return parsed_experiences
-
-    def extract_urls(self, text):
-        """Extracts URLs (like LinkedIn) from the given text using regex.
-
-        :param text: str: The text from which the URLs will be extracted.
-        :returns: list: A list of URLs found in the text.
-        """
-        linkedin_pattern = r'linkedin\.com\/[a-zA-Z0-9\-_\/]+'
-        linkedin_urls = re.findall(linkedin_pattern, text)
+        Software Engineering Intern
+        Google, New York, NY
+        May 2018
+        • Contributed to the development of a large-scale distributed system, implementing key components that improved data processing efficiency by 25%.
+        • Wrote unit tests and performed code reviews to ensure code quality and maintainability.
+        • Collaborated with a global team to prototype a new feature for Google Drive, enhancing file-sharing capabilities.
         
-        # Also keep the general URL pattern for other URLs
-        general_url_pattern = r'https?://[^\s]+'
-        other_urls = [url for url in re.findall(general_url_pattern, text) 
-                     if 'linkedin.com' not in url]
+        SKILLS
+        • Programming Languages: Python, Java, JavaScript, C++
+        • Cloud Platforms: AWS (EC2, S3, Lambda), Google Cloud Platform (GCP)
+        • DevOps Tools: Docker, Kubernetes, Jenkins, GitLab CI/CD
+        • Frameworks: Spring Boot, Flask, React.js
+        • Databases: PostgreSQL, MongoDB, DynamoDB
+        • Other: RESTful API development, GraphQL, Agile/Scrum methodologies
+
+        PROJECTS
+        Smart Fleet Management System
+        • Designed a scalable, cloud-based fleet management system to monitor and optimize vehicle routes and energy consumption for electric vehicles.
+        • Integrated machine learning models for predictive maintenance, reducing downtime by 15%.
         
-        return {
-            'linkedin': linkedin_urls[0] if linkedin_urls else None,
-            'other_urls': other_urls
-        }
+        Personal Finance App
+        • Developed a personal finance management app using React.js and Flask, featuring budget tracking, expense categorization, and data visualization.
+        • Deployed on AWS with Docker containers, supporting 500+ daily active users.
+    '''
+    job_description_text = '''
+        Title: Senior Data Scientist
+        Responsibilities:
+        - Design and implement scalable machine learning models.
+        - Collaborate with engineering teams to integrate models into production systems.
+        - Lead data analysis initiatives to provide actionable business insights.
+        - Mentor junior data scientists and analysts.
+        Requirements:
+        - Master's degree or PhD in Computer Science, Statistics, or related field.
+        - 5+ years of experience in data science or machine learning.
+        - Strong proficiency in Python, R, and SQL.
+        - Experience with cloud platforms like AWS or Azure.
+        - Excellent communication and presentation skills.
+    '''
 
-    def extract_email(self, text):
-        """Extracts email addresses from the given text using regex.
-
-        :param text: str: The text from which the email addresses will be extracted.
-        :returns: str: The candidate's email address, if found.
-        """
-        email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
-        email_match = re.search(email_pattern, text)
-        return email_match.group() if email_match else None
-
-    def extract_years_of_experience(self, text):
-        """Extracts years of experience from the given text using regex.
-
-        :param text: str: The text from which years of experience will be extracted.
-        :returns: list: List of extracted years of experience mentions.
-        """
-        experience_pattern = r'(\d+)\s*(?:year|years|yrs)\s*(?:of)?\s*(?:experience)?'
-        experience_matches = re.findall(experience_pattern, text.lower())
-        return [int(years) for years in experience_matches] if experience_matches else None
-
-    def extract_contact_info(self, text):
-        """Extracts all contact-related information from the given text.
-
-        :param text: str: The text from which contact information will be extracted.
-        :returns: dict: A dictionary containing all contact information.
-        """
-        return {
-            'email': self.extract_email(text),
-            'phone': self.extract_phone_number(text),
-            'urls': self.extract_urls(text),
-            'years_of_experience': self.extract_years_of_experience(text)
-        }
-
-    def extract_all(self, text):
-        """Extracts all relevant information from the given text.
-
-        :param text: str: The text from which all information will be extracted.
-        :returns: dict: A dictionary with all extracted information.
-        """
-        contact_info = self.extract_contact_info(text)
-        return {
-            'name': self.extract_name(text),
-            'contact_info': contact_info,
-            'employment_details': self.extract_employment_details(text),
-            'skills': self.extract_skills(text)
-        }
-
+    extracted_data = extract_resume_and_job_description(
+        resume_text, 
+        job_description_text
+    )
+    
+    print(extracted_data)
