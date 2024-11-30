@@ -6,6 +6,13 @@ import spacy
 from spacy.lang.en import English
 import contractions
 from datetime import datetime
+from spacy.cli import download
+
+
+try:
+    spacy.load("en_core_web_sm")
+except OSError:
+    download("en_core_web_sm")
 
 class TextCleaner:
     """A class for cleaning and processing text data."""
@@ -30,7 +37,7 @@ class TextCleaner:
         :returns: str: The cleaned string without HTML tags.
 
         """
-        return BeautifulSoup(text, 'html.parser').get_text()
+        return BeautifulSoup(text, "html.parser").get_text()
 
     def remove_accented_chars_func(self, text):
         """Removes all accented characters from a string, if present.
@@ -39,7 +46,11 @@ class TextCleaner:
         :returns: str: The cleaned string without accented characters.
 
         """
-        return unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('utf-8', 'ignore')
+        return (
+            unicodedata.normalize("NFKD", text)
+            .encode("ascii", "ignore")
+            .decode("utf-8", "ignore")
+        )
 
     def remove_punctuation_func(self, text):
         """Removes all punctuation from a string.
@@ -48,7 +59,7 @@ class TextCleaner:
         :returns: str: The cleaned string without punctuation.
 
         """
-        return re.sub(r'[^a-zA-Z0-9]', ' ', text)
+        return re.sub(r"[^a-zA-Z0-9]", " ", text)
 
     def remove_extra_whitespaces_func(self, text):
         """Removes extra whitespaces from a string, if present.
@@ -57,7 +68,7 @@ class TextCleaner:
         :returns: str: The cleaned string without extra whitespaces.
 
         """
-        return re.sub(r'^\s*|\s\s*', ' ', text).strip()
+        return re.sub(r"^\s*|\s\s*", " ", text).strip()
 
     def remove_stopwords(self, text):
         """Removes stop words (including capitalized ones) from the given string.
@@ -99,6 +110,16 @@ class TextCleaner:
         """
         doc = self.tokenizer(text)
         return [token.text for token in doc]
+    
+
+    def remove_irr_char_func(self, text):
+        """Removes all irrelevant characters (numbers and punctuation) from a string, if present
+        
+        :param text: str: String to which the function is to be applied, string
+        :returns: list: Clean string without irrelevant characters
+        """
+
+        return re.sub(r'[^a-zA-Z]', ' ', text)
 
     def clean_text(self, text):
         """Applies all cleaning steps to the given text.
@@ -108,7 +129,8 @@ class TextCleaner:
 
         """
         lowercased = self.lowercase_text(text)
-        expanded = self.expand_contractions(lowercased)
+        irrelevant_removed = self.remove_irr_char_func(lowercased)
+        expanded = self.expand_contractions(irrelevant_removed)
         no_html = self.remove_html_tags_func(expanded)
         no_accented_chars = self.remove_accented_chars_func(no_html)
         no_punct = self.remove_punctuation_func(no_accented_chars)
@@ -118,5 +140,13 @@ class TextCleaner:
         return tokenized
 
 if __name__ == "__main__":
-    # TODO: Add test code or example usage
-    pass
+    cleaner = TextCleaner()
+    sample_text = '''
+    This is an example sentence! It includes contractions (e.g., can't, won't), 
+    accented characters (é, ñ, ü), 
+    <html>tags</html>, 
+    punctuation!!!, 
+    and stopwords like "is," "an," and "the." 
+    Let's clean this up.
+    '''
+    print(cleaner.clean_text(text = sample_text))
