@@ -14,6 +14,7 @@ try:
 except OSError:
     download("en_core_web_sm")
 
+
 class TextCleaner:
     """A class for cleaning and processing text data."""
 
@@ -110,16 +111,15 @@ class TextCleaner:
         """
         doc = self.tokenizer(text)
         return [token.text for token in doc]
-    
 
     def remove_irr_char_func(self, text):
         """Removes all irrelevant characters (numbers and punctuation) from a string, if present
-        
+
         :param text: str: String to which the function is to be applied, string
         :returns: list: Clean string without irrelevant characters
         """
 
-        return re.sub(r'[^a-zA-Z]', ' ', text)
+        return re.sub(r"[^a-zA-Z]", " ", text)
 
     def clean_text(self, text):
         """Applies all cleaning steps to the given text.
@@ -139,14 +139,15 @@ class TextCleaner:
         tokenized = self.tokenize(no_stopwords)
         return tokenized
 
+
 if __name__ == "__main__":
     cleaner = TextCleaner()
-    sample_text = '''
+    sample_text = """
     This is an example sentence! It includes contractions (e.g., can't, won't), 
     accented characters (é, ñ, ü), 
     <html>tags</html>, 
     punctuation!!!, 
     and stopwords like "is," "an," and "the." 
     Let's clean this up.
-    '''
-    print(cleaner.clean_text(text = sample_text))
+    """
+    print(cleaner.clean_text(text=sample_text))
