@@ -1,82 +1,38 @@
-import pandas as pd
-from pathlib import Path
-from typing import List, Any
-from nltk.downloader import Downloader
-import logging
-from spacy.cli import download
 from resume_analyzer.document_parsing import DocumentParser
+from resume_analyzer.extraction import InformationExtractor, extract_resume_and_job_description
 from resume_analyzer.preprocessing import TextCleaner
 from resume_analyzer.vectorization import TextVectorizer
-from resume_analyzer.extraction import CandidateExtractor
+from resume_analyzer.scoring import ResumeScorer
 
-download("en_core_web_sm")
+class ResumeProcessor:
+    def __init__(self):
+        self.parser = DocumentParser()
+        self.extractor = InformationExtractor()
+        self.cleaner = TextCleaner()
+        self.scorer = ResumeScorer()
 
+    def process_resume(self, resume_path, jd_path):
+        # Step 1: Parse the resume and job description
+        resume_text = self.parser.parse(resume_path)
+        jd_text = self.parser.parse(jd_path)
+        
+        extracted_data = extract_resume_and_job_description(
+            resume_text, 
+            jd_text, 
+        )
 
-def check_package_exists(
-    package_id: Any,
-    download_dir: Path,
-) -> bool:
-    downloader = Downloader(download_dir=str(download_dir))
-    return downloader.is_installed(package_id)
+        extracted_data['resume']['full_text'] = self.cleaner.clean_text(resume_text)
+        extracted_data['job_description']['full_text'] = self.cleaner.clean_text(jd_text)
 
+        # Step 4: Score the resume against the job description
+        scores = self.scorer.score_resume(extracted_data)
+        
+        return scores
 
-def download_nltk_data(
-    list_of_resources: List[str],
-    download_dir: Path,
-) -> None:
-    download_dir.mkdir(parents=True, exist_ok=True)
-    downloader = Downloader(download_dir=str(download_dir))
-    for resource in list_of_resources:
-        if not check_package_exists(resource, download_dir):
-            logging.debug(f'Downloading {resource} to {download_dir}')
-            downloader.download(info_or_id=resource, quiet=True)
-        else:
-            logging.debug(f'{resource} already exists in {download_dir}')
-
-
-download_nltk_data(
-    list_of_resources=[
-        'stopwords',
-        'punkt',
-    ],
-    download_dir=Path('./data/nltk/'),
-)
-
-
-skills_df = pd.read_csv("data/skills_list.csv")
-skills_list = skills_df['skill_name'].dropna().tolist()
-
-document_parser = DocumentParser(skills_list)
-text_cleaner = TextCleaner()
-extractor = CandidateExtractor()
-vectorizer = TextVectorizer()
-
-
-resume = document_parser.parse_document(
-    "data/Resumes/web_developer_resume_sample.docx")
-cleaned_resume = ' '.join(text_cleaner.clean_text(resume))
-
-jd = document_parser.parse_document(
-    "data/JDs/web_developer_job_description_sample.docx")
-cleaned_jd = ' '.join(text_cleaner.clean_text(jd))
-print("Cleaned Resume: ", cleaned_resume)
-print("Cleaned JD: ", cleaned_jd)
-
-
-extractions = extractor.extract_all(cleaned_resume)
-print("Extractions: ", extractions)
-
-# Train the Doc2Vec model on both resume and JD
-vectorizer.train_model([cleaned_resume, cleaned_jd])
-
-# Vectorize the resume and JD
-resume_vector = vectorizer.vectorize(cleaned_resume)
-jd_vector = vectorizer.vectorize(cleaned_jd)
-
-print("Resume Vector: ", resume_vector)
-print("JD Vector: ", jd_vector)
-
-# Compute the similarity between resume and JD
-similarity = vectorizer.compute_similarity(resume_vector, jd_vector)
-
-print(f"Similarity between Resume and JD: {similarity:.4f}")
+if __name__ == "__main__":
+    processor = ResumeProcessor()
+    
+    resume_path = "data/Resumes/web_developer_resume_sample.pdf"
+    jd_path = "data/JDs/web_developer_job_description_sample.docx"
+    
+    result = processor.process_resume(resume_path, jd_path)

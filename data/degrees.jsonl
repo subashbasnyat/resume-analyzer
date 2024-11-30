@@ -1,0 +1,509 @@
+{"label": "DEGREE", "pattern": [{"LOWER": "high"}, {"LOWER": "school"}, {"LOWER": "diploma"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "ged"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "certificate"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "diploma"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "vocational"}, {"LOWER": "training"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "technical"}, {"LOWER": "training"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "a.a."}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "a.s."}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "a.a.s."}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "b.a."}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "b.s."}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "b.sc."}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bfa"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bba"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "m.a."}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "m.s."}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "mba"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "mfa"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "arts"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctorate"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "ph.d."}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "phd"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "philosophy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "md"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "jd"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "dds"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "dmd"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "pharmd"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "postdoctoral"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "fellowship"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "honorary"}, {"LOWER": "doctorate"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "professor"}, {"LOWER": "emeritus"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "distinguished"}, {"LOWER": "professor"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "BACHELOR"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "BACHELORS"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "BACHELOR'S"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "ASSOCIATE"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "DOCTOR"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "MASTER"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "MASTERS"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "MASTER'S"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "POST"}, {"TEXT": "GRADUATE"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "UNDERGRADUATE"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "GRADUATE"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "FELLOW"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "PROFESSOR"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "DEAN"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "LECTURER"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "SPECIALIST"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "RESEARCHER"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "SCHOLAR"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "PHD"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "CERTIFIED"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "DIPLOMATE"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "PRACTITIONER"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "CONSULTANT"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "ALUMNI"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "POSTDOCTORAL"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "CANDIDATE"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "DISTINGUISHED"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "COORDINATOR"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "DIRECTOR"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "EXECUTIVE"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "MANAGER"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "SUPERVISOR"}]}
+{"label": "DEGREE", "pattern": [{"TEXT": "POST"}, {"TEXT": "DOCTORATE"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelors"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor's"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "masters"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master's"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "undergraduate"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "graduate"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "fellow"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "professor"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "dean"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "lecturer"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "specialist"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "researcher"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "scholar"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "certified"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "diplomate"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "resident"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "practitioner"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "consultant"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "alumni"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "candidate"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "distinguished"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "coordinator"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "director"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "executive"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "manager"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "supervisor"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "liberal"}, {"LOWER": "arts"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "musical"}, {"LOWER": "arts"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "arts"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "applied"}, {"LOWER": "arts"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "applied"}, {"LOWER": "business"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "in"}, {"LOWER": "allied"}, {"LOWER": "health"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "arts"}, {"LOWER": "in"}, {"LOWER": "nursing"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "in"}, {"LOWER": "applied"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "arts"}, {"LOWER": "and"}, {"LOWER": "sciences"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "arts"}, {"LOWER": "in"}, {"LOWER": "teaching"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "applied"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "in"}, {"LOWER": "business"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "arts"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "business"}, {"LOWER": "administration"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "degree"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "degree"}, {"LOWER": "of"}, {"LOWER": "building"}, {"LOWER": "design"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "degree"}, {"LOWER": "of"}, {"LOWER": "building"}, {"LOWER": "surveying"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "degree"}, {"LOWER": "of"}, {"LOWER": "business"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "degree"}, {"LOWER": "of"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "degree"}, {"LOWER": "of"}, {"LOWER": "information"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "degree"}, {"LOWER": "of"}, {"LOWER": "journalism"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "degree"}, {"LOWER": "of"}, {"LOWER": "learning"}, {"LOWER": "management"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "degree"}, {"LOWER": "of"}, {"LOWER": "multimedia"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "degree"}, {"LOWER": "in"}, {"LOWER": "nursing"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "alternate"}, {"LOWER": "entry"}, {"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "nursing"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "engineering"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "in"}, {"LOWER": "engineering"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "forestry"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "fine"}, {"LOWER": "arts"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "general"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "industrial"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "liberal"}, {"LOWER": "arts"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "in"}, {"LOWER": "medical"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "nursing"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "in"}, {"LOWER": "occupational"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "in"}, {"LOWER": "occupational"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "public"}, {"LOWER": "service"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "political"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "in"}, {"LOWER": "physical"}, {"LOWER": "therapy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "dental"}, {"LOWER": "hygiene"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "nursing"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "degree"}, {"LOWER": "of"}, {"LOWER": "computing"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "degree"}, {"LOWER": "of"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "degree"}, {"LOWER": "of"}, {"LOWER": "technology"}, {"LOWER": "management"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "associate"}, {"LOWER": "of"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "audiology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "applied"}, {"LOWER": "arts"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "applied"}, {"LOWER": "arts"}, {"LOWER": "and"}, {"LOWER": "sciences"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "arts"}, {"LOWER": "in"}, {"LOWER": "communication"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "aerospace"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "arts"}, {"LOWER": "and"}, {"LOWER": "economics"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "economics"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "arts"}, {"LOWER": "in"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "applied"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "applied"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "architectural"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "art"}, {"LOWER": "&"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "applied"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "accountancy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "agricultural"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "applied"}, {"LOWER": "finance"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "architecture"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "asian"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "business"}, {"LOWER": "analysis"}, {"LOWER": "-"}, {"LOWER": "financial"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "business"}, {"LOWER": "administration"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "built"}, {"LOWER": "environment"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "biosystems"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "behavioural"}, {"LOWER": "neuroscience"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "business"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "commerce"}, {"LOWER": "and"}, {"LOWER": "administration"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "civil"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "computer"}, {"LOWER": "information"}, {"LOWER": "systems"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "criminal"}, {"LOWER": "justice"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "computer"}, {"LOWER": "and"}, {"LOWER": "mathematical"}, {"LOWER": "sciences"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "computing"}, {"LOWER": "&"}, {"LOWER": "mathematical"}, {"LOWER": "sciences"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "surgery"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "chemical"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "commerce"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "communication"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "computing"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "computer"}, {"LOWER": "operations"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "communications"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "design"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "electrical"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "electronics"}, {"LOWER": "engineering"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "environmental"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "finance"}, {"LOWER": "&"}, {"LOWER": "economics"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "economic"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "environmental"}, {"LOWER": "design"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "fine"}, {"LOWER": "arts"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "finance"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "general"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "game"}, {"LOWER": "&"}, {"LOWER": "simulation"}, {"LOWER": "programming"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "humanities"}, {"LOWER": "and"}, {"LOWER": "arts"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "hotel"}, {"LOWER": "management"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "health"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "health"}, {"LOWER": "sciences"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "interior"}, {"LOWER": "architecture"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "integrated"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "interdisciplinary"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "industrial"}, {"LOWER": "and"}, {"LOWER": "science"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "information"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "industrial"}, {"LOWER": "design"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "information"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "international"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "journalism"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "landscape"}, {"LOWER": "architecture"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "liberal"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "languages"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "music"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "mechanical"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "music"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "materials"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "public"}, {"LOWER": "affairs"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "polymer"}, {"LOWER": "and"}, {"LOWER": "fiber"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "professional"}, {"LOWER": "health"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "aerospace"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "business"}, {"LOWER": "administration"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "biomedical"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "commerce"}, {"LOWER": "business"}, {"LOWER": "administration"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "civil"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "computer"}, {"LOWER": "&"}, {"LOWER": "information"}, {"LOWER": "sciences"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "computer"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "computer"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "chemical"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "chemistry"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "electrical"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "engineering"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "geology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "human"}, {"LOWER": "environmental"}, {"LOWER": "sciences"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "mechanical"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "manufacturing"}, {"LOWER": "engineering"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "metallurgical"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "microbiology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "materials"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "nursing"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "social"}, {"LOWER": "work"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "social"}, {"LOWER": "work"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "software"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "textile"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "technical"}, {"LOWER": "&"}, {"LOWER": "interdisciplinary"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "textile"}, {"LOWER": "management"}, {"LOWER": "and"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "wireless"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "arts"}, {"LOWER": "for"}, {"LOWER": "teaching"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "aviation"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "biomedical"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "business"}, {"LOWER": "information"}, {"LOWER": "systems"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "dental"}, {"LOWER": "surgery"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "surgery"}, {"LOWER": "degree"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "civil"}, {"LOWER": "law"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "counseling"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "divinity"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "divisionnity"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "dental"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "economics"}, {"LOWER": "and"}, {"LOWER": "finance"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "health"}, {"LOWER": "&"}, {"LOWER": "physical"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "hygiene"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "information"}, {"LOWER": "and"}, {"LOWER": "communications"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "kinesiology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "music"}, {"LOWER": "(degree)"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "medicine"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "medical"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "midwifery"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "ministry"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "nursing"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "nursing"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "physical"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "pharmacy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "philosophy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "public"}, {"LOWER": "health"}, {"LOWER": "nursing"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "professional"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "religious"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "religious"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "(clear"}, {"LOWER": "in"}, {"LOWER": "education"}, {"LOWER": "line)"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "(university"}, {"LOWER": "degree)"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "and/with"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "economics"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "psychology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "environmental"}, {"LOWER": "health"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "family"}, {"LOWER": "and"}, {"LOWER": "consumer"}, {"LOWER": "sciences"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "general"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "law"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "medicine"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "nuclear"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "social"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "public"}, {"LOWER": "health"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "teaching"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "theology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "veterinary"}, {"LOWER": "medicine"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "veterinary"}, {"LOWER": "medicine"}, {"LOWER": "and"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "surgery"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "in"}, {"LOWER": "surgery"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "arts"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "applied"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "architecture"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "business"}, {"LOWER": "administration"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "criminal"}, {"LOWER": "justice"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "comparative"}, {"LOWER": "law"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "civil"}, {"LOWER": "law"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "computer"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "chemistry"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "criminology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "engineering"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "environmental"}, {"LOWER": "science"}, {"LOWER": "and"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "forestry"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "fine"}, {"LOWER": "arts"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "geological"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "health"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "hebrew"}, {"LOWER": "literature/letters"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "health"}, {"LOWER": "and"}, {"LOWER": "safety"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "hebrew"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "humane"}, {"LOWER": "letters"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "information"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "industrial"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "law"}, {"LOWER": "and"}, {"LOWER": "policy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "library"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "literature"}, {"LOWER": "and"}, {"LOWER": "philosophy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "ministry"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "musical"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "modern"}, {"LOWER": "languages"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "medical"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "music"}, {"LOWER": "therapy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "music"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "naprapathic"}, {"LOWER": "medicine"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "nursing"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "public"}, {"LOWER": "administration"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "physical"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "public"}, {"LOWER": "health"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "professional"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "physical"}, {"LOWER": "therapy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "recreation"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "sacred"}, {"LOWER": "music"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "social"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "social"}, {"LOWER": "work"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "dentistry"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "and"}, {"LOWER": "hygiene"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "veterinary"}, {"LOWER": "medicine"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "chiropractic"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "clinical"}, {"LOWER": "psychology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "divinitatis"}, {"LOWER": "doctor"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "divisionnity"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "divisionnitatis"}, {"LOWER": "doctor"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "divinity"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "dental"}, {"LOWER": "surgery"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "dental"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "literature"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "letters"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "medicine"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "dental"}, {"LOWER": "medicine"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "medical"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "medical"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "veterinary"}, {"LOWER": "medicine"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "nursing"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "nursing"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "osteopathy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "ocular"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "pharmacy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "public"}, {"LOWER": "health"}, {"LOWER": "nursing"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "pediatric"}, {"LOWER": "medicine"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "practical"}, {"LOWER": "theology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "design"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "the"}, {"LOWER": "university"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "veterinary"}, {"LOWER": "medicine"}, {"LOWER": "&"}, {"LOWER": "surgery"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "veterinary"}, {"LOWER": "radiology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "veterinary"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "canon"}, {"LOWER": "law"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "juris"}, {"LOWER": "doctor"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "juridical"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "the"}, {"LOWER": "science"}, {"LOWER": "of"}, {"LOWER": "law"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "laws"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "legum"}, {"LOWER": "baccalaureus"}, {"LOWER": "(latin:"}, {"LOWER": "bachelor"}, {"LOWER": "of"}, {"LOWER": "laws)"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "laws"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "licensed"}, {"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "social"}, {"LOWER": "work"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "arts"}, {"LOWER": "in"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "fine"}, {"LOWER": "arts"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "interdisciplinary"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "library"}, {"LOWER": "and"}, {"LOWER": "information"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "ministry"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "music"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "occupational"}, {"LOWER": "therapy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "engineering"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "nursing"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "social"}, {"LOWER": "work"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "urban"}, {"LOWER": "planning"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "applied"}, {"LOWER": "anthropology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "accountancy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "arts"}, {"LOWER": "in"}, {"LOWER": "christian"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "arts"}, {"LOWER": "in"}, {"LOWER": "international"}, {"LOWER": "economics"}, {"LOWER": "and"}, {"LOWER": "finance"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "arts"}, {"LOWER": "in"}, {"LOWER": "international"}, {"LOWER": "hotel"}, {"LOWER": "management"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "arts"}, {"LOWER": "in"}, {"LOWER": "liberal"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "arts"}, {"LOWER": "management"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "arts"}, {"LOWER": "in"}, {"LOWER": "public"}, {"LOWER": "service"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "arts"}, {"LOWER": "in"}, {"LOWER": "professional"}, {"LOWER": "writing"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "architecture"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "archival"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "applied"}, {"LOWER": "sciences"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "arts"}, {"LOWER": "and"}, {"LOWER": "teaching"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "business"}, {"LOWER": "administration"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "biochemistry"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "biology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "biological"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "surgery"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "chemistry"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "criminal"}, {"LOWER": "justice"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "clinical"}, {"LOWER": "dentistry"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "clinical"}, {"LOWER": "medical"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "divisionnity"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "divinity"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "digital"}, {"LOWER": "media"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "drama"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "dental"}, {"LOWER": "surgery"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "electronic"}, {"LOWER": "business"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "economics"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "environmental"}, {"LOWER": "design"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "environmental"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "environmental"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "earth"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "educational"}, {"LOWER": "technology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "fine"}, {"LOWER": "art"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "forensic"}, {"LOWER": "sciences"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "geography"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "geology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "geophysics"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "health"}, {"LOWER": "administration"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "health"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "health"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "industrial"}, {"LOWER": "design"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "international"}, {"LOWER": "development"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "management"}, {"LOWER": "in"}, {"LOWER": "the"}, {"LOWER": "network"}, {"LOWER": "economy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "informatics"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "information"}, {"LOWER": "systems"}, {"LOWER": "management"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "jurisprudence"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "labor"}, {"LOWER": "and"}, {"LOWER": "human"}, {"LOWER": "resources"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "librarianship"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "library"}, {"LOWER": "and"}, {"LOWER": "information"}, {"LOWER": "science"}, {"LOWER": "degree"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "letters"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "library"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "liberal"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "mathematics"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "mathematics"}, {"LOWER": "and"}, {"LOWER": "physics"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "mass"}, {"LOWER": "communications"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "music"}, {"LOWER": "education"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "marketing"}, {"LOWER": "research"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "medical"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "management"}, {"LOWER": "sciences"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "nursing"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "natural"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "nursing"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "oceanography"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "pharmacy"}, {"LOWER": "administration"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "public"}, {"LOWER": "administration"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "professional"}, {"LOWER": "accountancy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "physician"}, {"LOWER": "assistant"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "pharmacy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "public"}, {"LOWER": "health"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "philosophy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "physics"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "pacific"}, {"LOWER": "international"}, {"LOWER": "affairs"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "planning"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "project"}, {"LOWER": "management"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "public"}, {"LOWER": "management"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "public"}, {"LOWER": "policy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "professional"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "physical"}, {"LOWER": "therapy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "radiology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "research"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "in"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "dentistry"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "electrical"}, {"LOWER": "engineering"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "environmental"}, {"LOWER": "health"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "finance"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "information"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "information"}, {"LOWER": "systems"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "information"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "library"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "sacred"}, {"LOWER": "music"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "natural"}, {"LOWER": "sciences"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "social"}, {"LOWER": "science"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "organizational"}, {"LOWER": "leadership"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "public"}, {"LOWER": "health"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "strategic"}, {"LOWER": "leadership"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "social"}, {"LOWER": "work"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "science"}, {"LOWER": "in"}, {"LOWER": "taxation"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "statistics"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "theology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "the"}, {"LOWER": "university"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "urban"}, {"LOWER": "studies"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "master"}, {"LOWER": "of"}, {"LOWER": "urban"}, {"LOWER": "and"}, {"LOWER": "regional"}, {"LOWER": "planning"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "naturopathy"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "optometry"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "post"}, {"LOWER": "master's"}, {"LOWER": "graduate"}, {"LOWER": "certificate"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "psychology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "rehabilitation"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "sacred"}, {"LOWER": "theology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "doctor"}, {"LOWER": "of"}, {"LOWER": "theology"}]}
+{"label": "DEGREE", "pattern": [{"LOWER": "veterinary"}, {"LOWER": "medical"}, {"LOWER": "doctor"}]}
