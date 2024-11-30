@@ -3,12 +3,9 @@ import logging
 from typing import Dict, List, Any
 
 import spacy
-import pandas as pd
-from fuzzywuzzy import fuzz
 
 class InformationExtractor:
-    def __init__(self,
-                 fuzzy_threshold=80):
+    def __init__(self):
         try:
             # Load spaCy model for NLP tasks
             self.nlp = spacy.load('en_core_web_sm')
@@ -20,53 +17,10 @@ class InformationExtractor:
             logging.error(f"Error loading spaCy model: {str(e)}")
             raise
 
-        # Fuzzy matching threshold
-        self.fuzzy_threshold = fuzzy_threshold
-
         # Regex patterns
         self.email_pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
         self.phone_pattern = r'\b(?:\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}\b'
         self.experience_pattern = r'(\d+)\s*\+?\s*(?:year|yr)s?\s*of\s*experience'
-
-    def _load_csv_list(self, file_path: str, column_name: str) -> List[str]:
-        """Generic method to load a column from a CSV file."""
-        try:
-            df = pd.read_csv(file_path)
-            return df[column_name].dropna().tolist()
-        except Exception as e:
-            logging.error(f"Error loading {column_name} list from {file_path}: {e}")
-            return []
-
-    def _fuzzy_match(self, input_text: str, candidates: List[str], match_type='partial'):
-        """
-        Enhanced fuzzy matching with multiple strategies
-        
-        Args:
-        - input_text: Text to match
-        - candidates: List of potential matches
-        - match_type: 'partial', 'full', or 'token'
-        
-        Returns: Best matched candidate
-        """
-        best_match = None
-        highest_score = 0
-        
-        match_functions = {
-            'partial': fuzz.partial_ratio,
-            'full': fuzz.ratio,
-            'token': fuzz.token_sort_ratio
-        }
-        
-        match_func = match_functions.get(match_type, fuzz.partial_ratio)
-        
-        for candidate in candidates:
-            score = match_func(input_text.lower(), candidate.lower())
-            
-            if score > highest_score and score >= self.fuzzy_threshold:
-                highest_score = score
-                best_match = candidate
-        
-        return best_match
 
     def extract_contact_info(self, text: str) -> Dict[str, str]:
         """Extract contact information from text."""

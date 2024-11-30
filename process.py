@@ -36,3 +36,5 @@ if __name__ == "__main__":
     jd_path = "data/JDs/web_developer_job_description_sample.docx"
     
     result = processor.process_resume(resume_path, jd_path)
+
+    print("RESULT", result)
