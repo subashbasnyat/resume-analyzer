@@ -10,51 +10,49 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+<div class="main-container d-flex">
+    <div class="upload-box w-100">
+        <!-- Main Content -->
+        <div class="container mb-5">
+            <h1 class="text-center">Welcome to Resume Parser</h1>
+            <p class="text-center">Parse and analyze your resumes effectively with our advanced tools.</p>
+        </div>
+    
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="glass-card text-center">
+                        <form action="/parse" method="POST" enctype="multipart/form-data">
+                            <div class="d-flex mb-4 align-items-center justify-content-around">
+                                <h5 class="mb-0">Upload Your Resume: </h5>
+                                <div class="w-50">
+                                    <label class="custom-file-label" for="resumeFile">Choose file</label>
+                                    <input type="file" class="custom-file-input" id="resumeFile" name="file" accept=".pdf,.docx" required>
+                                </div>
+                            </div>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light custom-navbar">
-<div class="container">
-    <a class="navbar-brand" href="#">Resume Parser</a>
-    <button class="navbar-toggler shadow" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#features">Features</a>
-            </li>
-        </ul>
-    </div>
-</div>
-</nav>
-<!-- Main Content -->
-<div class="container mt-5">
-    <h1 class="text-center">Welcome to Resume Parser</h1>
-    <p class="text-center">Parse and analyze your resumes effectively with our advanced tools.</p>
-</div>
+                            <div class="d-flex mb-4 align-items-center justify-content-around">
+                                <h5 class="mb-0">Upload Your Job Description: </h5>
+                                <div class="w-50">
+                                    <label class="custom-file-label" for="resumeFile">Choose file</label>
+                                    <input type="file" class="custom-file-input" id="resumeFile" name="file" accept=".pdf,.docx" required>
+                                </div>
+                            </div>
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-5">
-            <div class="glass-card text-center">
-                <h3 class="mb-4">Upload Your Resume</h3>
-                <form action="/parse" method="POST" enctype="multipart/form-data">
-                    <div class="mb-4">
-                        <label class="custom-file-label" for="resumeFile">Choose file</label>
-                        <input type="file" class="custom-file-input" id="resumeFile" name="file" accept=".pdf,.docx" required>
+                            <button type="submit" class="btn btn-custom w-50"> <i class="fa-solid fa-upload me-3"></i> Parse Resume</button>
+                        </form>
+
+                        <div class="mt-3 footer-text">
+                            <small>Supported formats: PDF, DOCX</small>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-custom w-100"> <i class="fa-solid fa-upload me-3"></i> Parse Resume</button>
-                </form>
-                <div class="mt-3 footer-text">
-                    <small>Supported formats: PDF, DOCX</small>
                 </div>
+                
             </div>
         </div>
     </div>
 </div>
+
 
 <!-- Bootstrap JS and dependencies -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

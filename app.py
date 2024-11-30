@@ -1,13 +1,13 @@
 from flask import Flask, render_template, request
 import os
-from resume_analyzer.document_parsing import DocumentParser # Import your custom DocumentParser class
+from resume_analyzer.document_parsing import DocumentParser
 import pandas as pd
 
 # Flask app initialization
 app = Flask(__name__)
 
 # Load skills list from a CSV file
-skills_df = pd.read_csv("data/skills_list.csv")  # Ensure the path to your CSV is correct
+skills_df = pd.read_csv("data/skills_list.csv") 
 skills_list = skills_df['skill_name'].dropna().tolist()
 
 # Initialize the DocumentParser with the skills list
