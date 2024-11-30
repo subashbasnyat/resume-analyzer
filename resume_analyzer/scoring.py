@@ -437,8 +437,8 @@ class ResumeScorer:
         """
         if not resume_text or not jd_text:
             return 0.0
-            
-        similarity_score = self.compute_similarity(resume_text, jd_text)
+        
+        similarity_score = self.compute_similarity(' '.join(resume_text), ' '.join(jd_text))
         
         # Add bonus for keyword overlap
         resume_words = set(resume_text)

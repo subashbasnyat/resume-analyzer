@@ -23,8 +23,8 @@ sentence-transformers = "^3.3.1"
 gensim = "^4.3.3"
 flair = "^0.14.0"
 pdfplumber = "^0.11.4"
-python-levenshtein = "^0.26.1"
 fuzzywuzzy = "^0.18.0"
+python-levenshtein = "^0.26.1"
 
 
 [build-system]
