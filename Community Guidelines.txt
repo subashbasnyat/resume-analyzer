@@ -1,0 +1,5 @@
+Community and behavioral expectations:
+1. Never commit or push without notifying project members.
+2. It is suggested to note down pull and commit procedures in a notecopy for easier recall.
+3. Do not upload unsure/incomplete code in Github. 
+4. Test the performance of code primarily in your machine and only then create a pull request.
