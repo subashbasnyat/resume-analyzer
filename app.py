@@ -1,17 +1,13 @@
 from flask import Flask, render_template, request
 import os
-from resume_analyzer.document_parsing import DocumentParser
+from process import ResumeProcessor
 import pandas as pd
 
 # Flask app initialization
 app = Flask(__name__)
 
-# Load skills list from a CSV file
-skills_df = pd.read_csv("data/skills_list.csv") 
-skills_list = skills_df['skill_name'].dropna().tolist()
-
-# Initialize the DocumentParser with the skills list
-parser = DocumentParser(skills_list)
+# Initialize the ResumeProcessor
+processor = ResumeProcessor()
 
 # Configure file upload folder
 UPLOAD_FOLDER = 'uploads'
@@ -25,32 +21,38 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/parse', methods=['POST'])
+@app.route('/parsing-result', methods=['POST'])
 def parse_resume():
-    """Handle resume upload, parsing, and skill analysis."""
-    if 'file' not in request.files:
-        return 'No file part', 400
+    """Handle resume and JD upload, parsing, and scoring."""
+    if 'file' not in request.files or 'file2' not in request.files:
+        return 'Resume or JD file is missing.', 400
 
-    file = request.files['file']
-    if file.filename == '':
-        return 'No selected file', 400
+    resume_file = request.files['file']
+    jd_file = request.files['file2']
 
-    if file:
-        # Save the uploaded file temporarily
-        file_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
-        file.save(file_path)
+    if not resume_file or resume_file.filename == '':
+        return 'No resume file selected.', 400
+    if not jd_file or jd_file.filename == '':
+        return 'No JD file selected.', 400
 
-        try:
-            # Parse the document and analyze skills
-            similarity_scores = parser.analyze_resume(file_path)
+    # Save the uploaded files temporarily
+    resume_path = os.path.join(app.config['UPLOAD_FOLDER'], resume_file.filename)
+    jd_path = os.path.join(app.config['UPLOAD_FOLDER'], jd_file.filename)
+    resume_file.save(resume_path)
+    jd_file.save(jd_path)
 
-            # Clean up the uploaded file
-            os.remove(file_path)
+    try:
+        # Process the resume and JD
+        scores = processor.process_resume(resume_path, jd_path)
 
-            # Render results in the template
-            return render_template('result.html', data=similarity_scores.to_dict(orient='records'))
-        except Exception as e:
-            return f"Error processing file: {e}", 500
+        # Clean up the uploaded files
+        os.remove(resume_path)
+        os.remove(jd_path)
+
+        # Render results in the template
+        return render_template('result.html', data=scores)
+    except Exception as e:
+        return f"Error processing files: {e}", 500
 
 
 if __name__ == '__main__':
