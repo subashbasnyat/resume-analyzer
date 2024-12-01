@@ -4,12 +4,14 @@
 
 /* Background gradient */
 .main-container{
-    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
     align-items: center;
     justify-content: center;
     font-family: Arial, sans-serif;
     width: 100%;
     height: 100vh;
+    background: url("https://img.freepik.com/free-vector/white-minimal-hexagons-background_79603-1452.jpg?t=st=1733019910~exp=1733023510~hmac=c50f5d60a8ebe4c68aed7872baba73ff3a773e0b01392517ee0aae7a91356a16&w=1060") center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 /* Glassmorphism effect for the card */
 .glass-card {
@@ -87,4 +89,35 @@
 
 .buttons a:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+}
+
+.score-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0;
+    text-align: center;
+}
+.score-card i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #6c757d;
+}
+.progress-bar {
+    transition: width 1s;
+}
+
+.skill-box {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 15px;
+    color: white;
+    font-size: 0.9rem;
+}
+.skill-box.green {
+    background-color: #28a745; /* Bootstrap success green */
+}
+.skill-box.red {
+    background-color: #dc3545; /* Bootstrap danger red */
 }
