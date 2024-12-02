@@ -215,3 +215,12 @@ body {
 .bg-primary {
     background-color: #007bff !important;
 }
+
+
+iframe#resumeIframe {
+    border: none;
+}
+
+iframe#jobIframe {
+    border: none;
+}
