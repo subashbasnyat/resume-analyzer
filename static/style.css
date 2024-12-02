@@ -1,19 +1,32 @@
+/* Reset and Base Styles */
 *, ::after, ::before {
-    box-sizing: revert;
+    box-sizing: border-box;
 }
 
-/* Background gradient */
-.main-container{
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+/* Layout */
+.main-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
     align-items: center;
     justify-content: center;
-    font-family: Arial, sans-serif;
-    width: 100%;
-    height: 100vh;
     background: url("https://img.freepik.com/free-vector/white-minimal-hexagons-background_79603-1452.jpg?t=st=1733019910~exp=1733023510~hmac=c50f5d60a8ebe4c68aed7872baba73ff3a773e0b01392517ee0aae7a91356a16&w=1060") center no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
-/* Glassmorphism effect for the card */
+
+.footer {
+    margin-top: auto;
+}
+
+/* Cards and Containers */
 .glass-card {
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.1);
@@ -24,7 +37,95 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-/* File input styling */
+.custom-card {
+    border: 2px dashed #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.score-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.score-card i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #6c757d;
+}
+
+/* Buttons and Interactive Elements */
+.button {
+    color: white;
+    background-color: #2d7eff;
+    border: 5px solid transparent;
+    transition: .2s ease;
+    border-radius: 50px;
+    padding: 15px 20px;
+    font: 700 13px 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    margin: 1em;
+}
+
+.button:hover {
+    color: #2d7eff;
+    background-color: white;
+    transform: scale(1.1);
+    border: 5px solid #2d7eff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+}
+
+.btn-analyze {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.btn-analyze:hover {
+    background: #0056b3;
+}
+
+.btn-custom {
+    background-color: #6c63ff;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #5348c3;
+}
+
+/* File Upload Elements */
+.upload-btn {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    border-radius: 4px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.upload-btn:hover {
+    background: #e9ecef;
+}
+
 .custom-file-input {
     opacity: 0;
     position: absolute;
@@ -41,83 +142,76 @@
     text-align: center;
 }
 
-/* Button styling */
-.btn-custom {
-    background-color: #6c63ff;
-    color: #fff;
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Skill Elements */
+.skill-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-box {
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
     font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
-    transition: background 0.3s ease;
 }
 
-.btn-custom:hover {
-    background-color: #5348c3;
+/* Links */
+.github-link {
+    color: #6c757d;
+    margin-left: 0.5rem;
+    transition: color 0.3s ease;
 }
 
-/* Footer text */
+.github-link:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Utility Classes */
+.d-none {
+    display: none !important;
+}
+
 .footer-text {
     font-size: 0.85rem;
     color: #666;
 }
-.button {
-	color: white;
-	background-color: #2d7eff;
-	border: 5px solid transparent;
-	transition: .2s ease;
-	border-radius: 50px;
-}
 
-.button:hover {
-	color: #2d7eff;
-	background-color: white;
-	transform: scale(1.1);
-	border: 5px solid #2d7eff;
-}
-
-.buttons a {
-    padding: 15px 20px;
-    font: 13px 'Montserrat', sans-serif;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;
-    margin: 1em;
-}
-
-.buttons a:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
-}
-
-.score-card {
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px 0;
-    text-align: center;
-}
-.score-card i {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #6c757d;
-}
 .progress-bar {
     transition: width 1s;
 }
 
-.skill-box {
-    display: inline-block;
-    padding: 5px 10px;
-    margin: 5px;
-    border-radius: 15px;
+/* Colors */
+.green {
+    background-color: #28a745;
     color: white;
-    font-size: 0.9rem;
 }
-.skill-box.green {
-    background-color: #28a745; /* Bootstrap success green */
+
+.red {
+    background-color: #dc3545;
+    color: white;
 }
-.skill-box.red {
-    background-color: #dc3545; /* Bootstrap danger red */
+
+.bg-light {
+    background-color: #f8f9fa;
+}
+
+.bg-primary {
+    background-color: #007bff !important;
 }
