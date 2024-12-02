@@ -1,67 +1,67 @@
-Welcome to the resume analyzer contributing guide
+# Contributing Guide for Resume Analyzer
 
-In this guide you will get an overview of the contribution workflow from opening an issue, creating a PR, reviewing, and merging the PR.
+Welcome to the Resume Analyzer contributing guide! This document provides an overview of the contribution workflow, from opening an issue and creating a pull request (PR) to reviewing and merging the PR.
 
-Use the table of contents icon Table of contents icon on the top left corner of this document to get to a specific section of this guide quickly.
+## New Contributor Guide
+To get an overview of the project, start by reading the [README](./README.md) file.
 
-New contributor guide
-To get an overview of the project, read the README file. 
+## Issues
 
+### Create a New Issue
+If you find a bug or have a feature request, check if an issue already exists. If it doesn’t, you can open a new issue. Provide as much detail as possible to help us understand and address the issue.
 
-Issues
-Create a new issue
-If you spot a problem with the docs, search if an issue already exists. If a related issue doesn't exist, you can open a new issue using a relevant issue form.
+### Solve an Issue
+Browse through existing issues to find one that interests you. You can filter issues by labels to find a match for your expertise. We don’t assign issues, so feel free to open a PR for any issue you’d like to work on.
 
-Solve an issue
-Scan through our existing issues to find one that interests you. You can narrow down the search using labels as filters. See "Label reference" for more information. As a general rule, we don’t assign issues to anyone. If you find an issue to work on, you are welcome to open a PR with a fix.
+## Making Changes
 
-Make Changes
-Make changes in the UI
-Click Make a contribution at the bottom of any docs page to make small changes such as a typo, sentence fix, or a broken link. This takes you to the .md file where you can make your changes and create a pull request for a review.
+### Make Changes in the UI
+For minor changes such as fixing typos or updating documentation, you can use the GitHub UI. Click "Edit" at the top of any documentation page to make your changes and submit a PR for review.
 
+### Make Changes Locally
+For more significant changes, follow these steps to set up a local development environment:
 
+#### Fork the Repository
+1. **Fork the Repo:** Create your own copy of the repository by forking it.
+2. **Clone the Repo:** Clone your forked repository to your local machine.
+   ```bash
+   git clone https://github.com/your-username/resume-analyzer.git
+   cd resume-analyzer
+   ```
+3. **Create a Branch:** Create a new branch for your changes.
+   ```bash
+   git checkout -b your-branch-name
+   ```
 
-Make changes in a codespace
-For more information about using a codespace for working on GitHub documentation, see "Working in a codespace."
+#### Install Dependencies
+Make sure you have the necessary dependencies installed. Use Poetry for dependency management:
+```bash
+pip install poetry
+poetry install
+```
 
-Make changes locally
-Fork the repository.
-Using GitHub Desktop:
+#### Make Your Changes
+Make your changes to the code or documentation.
 
-Getting started with GitHub Desktop will guide you through setting up Desktop.
-Once Desktop is set up, you can use it to fork the repo!
-Using the command line:
+### Commit Your Updates
+Commit your changes with a clear and descriptive message.
+```bash
+git add .
+git commit -m "Your descriptive commit message"
+```
 
-Fork the repo so that you can make your changes without affecting the original project until you're ready to merge them.
-Install or update to Node.js, at the version specified in .node-version. For more information, see the development guide.
+### Pull Request
+1. **Push to GitHub:** Push your changes to your forked repository.
+   ```bash
+   git push origin your-branch-name
+   ```
+2. **Create a PR:** Go to the original repository and create a pull request from your branch. Fill out the PR template to help reviewers understand your changes.
 
-Create a working branch and start with your changes!
+3. **Link to Issues:** If your PR addresses an issue, link it in the PR description.
 
-Commit your update
-Commit the changes once you are happy with them. Don't forget to use the "Self review checklist" to speed up the review process ⚡.
+4. **Review Process:** A maintainer will review your PR. They may request changes, ask questions, or provide feedback. Make the necessary updates and push them to your branch.
 
-Pull Request
-When you're finished with the changes, create a pull request, also known as a PR.
+5. **Resolve Conversations:** As you address feedback, mark each conversation as resolved.
 
-Fill the "Ready for review" template so that we can review your PR. This template helps reviewers understand your changes as well as the purpose of your pull request.
-Don't forget to link PR to issue if you are solving one.
-Enable the checkbox to allow maintainer edits so the branch can be updated for a merge. Once you submit your PR, a Docs team member will review your proposal. We may ask questions or request additional information.
-We may ask for changes to be made before a PR can be merged, either using suggested changes or pull request comments. You can apply suggested changes directly through the UI. You can make any other changes in your fork, then commit them to your branch.
-As you update your PR and apply changes, mark each conversation as resolved.
-If you run into any merge issues, checkout this git tutorial to help you resolve merge conflicts and other issues.
-Your PR is merged!
-
-
-Once your PR is merged, your contributions will be publicly visible on the GitHub docs.
-
-Now that you are part of the GitHub docs community, see how else you can contribute to the docs.
-
-Windows
-This site can be developed on Windows, however a few potential gotchas need to be kept in mind:
-
-Regular Expressions: Windows uses \r\n for line endings, while Unix-based systems use \n. Therefore, when working on Regular Expressions, use \r?\n instead of \n in order to support both environments. The Node.js os.EOL property can be used to get an OS-specific end-of-line marker.
-Paths: Windows systems use \ for the path separator, which would be returned by path.join and others. You could use path.posix, path.posix.join etc and the slash module, if you need forward slashes - like for constructing URLs - or ensure your code works with either.
-Bash: Not every Windows developer has a terminal that fully supports Bash, so it's generally preferred to write scripts in JavaScript instead of Bash.
-Filename too long error: There is a 260 character limit for a filename when Git is compiled with msys. While the suggestions below are not guaranteed to work and could cause other issues, a few workarounds include:
-Update Git configuration: git config --system core.longpaths true
-Consider using a different Git client on Windows
+### Your PR is Merged!
+Once your PR is approved and merged, your contributions will be publicly visible. Thank you for contributing to Resume Analyzer!
