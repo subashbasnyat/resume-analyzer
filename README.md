@@ -10,17 +10,21 @@ Features of the project:
 
 # Usage
 
-1. Install the requirements
+## Steps to Run Flask App with Poetry
 
-```bash
-pip install poetry
-poetry install
-```
+1. Install Poetry if not already installed:
+    ```bash
+    pip install poetry
+    ```
 
-2. Steps to Run Flask App with Poetry
-```
- pip install poetry
- poetry install
- poetry run python app.py
-```
+2. Install project dependencies:
+    ```bash
+    poetry install
+    ```
+
+3. Run the Flask application:
+    ```bash
+    poetry run python app.py
+    ```
+
 Once the app is running, open the provided HTTP link in your browser to access the Resume Analyzer: [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
