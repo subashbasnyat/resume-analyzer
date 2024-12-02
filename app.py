@@ -14,6 +14,8 @@ UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)  # Ensure the folder exists
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+# Store parsed resume data in memory (or use a more permanent solution)
+analysis = {}
 
 @app.route('/')
 def index():
@@ -22,37 +24,65 @@ def index():
 
 
 @app.route('/parsing-result', methods=['POST'])
-def parse_resume():
-    """Handle resume and JD upload, parsing, and scoring."""
-    if 'file' not in request.files or 'file2' not in request.files:
-        return 'Resume or JD file is missing.', 400
+def parse_resumes():
+    """Handle multiple resumes and a single JD upload, parsing, and scoring."""
+    if 'resumes' not in request.files or 'job_description' not in request.files:
+        return 'Resumes or JD file is missing.', 400
 
-    resume_file = request.files['file']
-    jd_file = request.files['file2']
+    resumes = request.files.getlist('resumes')
+    jd_file = request.files['job_description']
 
-    if not resume_file or resume_file.filename == '':
-        return 'No resume file selected.', 400
     if not jd_file or jd_file.filename == '':
         return 'No JD file selected.', 400
+    if not resumes or len(resumes) == 0:
+        return 'No resumes selected.', 400
 
-    # Save the uploaded files temporarily
-    resume_path = os.path.join(app.config['UPLOAD_FOLDER'], resume_file.filename)
+    # Save the JD file temporarily
     jd_path = os.path.join(app.config['UPLOAD_FOLDER'], jd_file.filename)
-    resume_file.save(resume_path)
     jd_file.save(jd_path)
 
     try:
-        # Process the resume and JD
-        scores = processor.process_resume(resume_path, jd_path)
+        for resume_file in resumes:
+            if resume_file.filename == '':
+                continue
 
-        # Clean up the uploaded files
-        os.remove(resume_path)
+            # Save each resume file temporarily
+            resume_path = os.path.join(app.config['UPLOAD_FOLDER'], resume_file.filename)
+            resume_file.save(resume_path)
+
+            # Process each resume against the JD
+            scores = processor.process_resume(resume_path, jd_path)
+            analysis[resume_file.filename] = scores
+
+            # Clean up the uploaded resume file
+            os.remove(resume_path)
+
+        # Clean up the JD file
         os.remove(jd_path)
 
+        sorted_results = dict(sorted(analysis.items(), key=lambda item: item[1]['total_score'], reverse=True))
+        print("SORTED RESULTS", sorted_results)
         # Render results in the template
-        return render_template('result.html', data=scores)
+        return render_template('result.html', results=sorted_results)
     except Exception as e:
         return f"Error processing files: {e}", 500
+
+
+@app.route('/details')
+def resume_details():
+    """Display detailed analysis for a specific resume."""
+    resume_name = request.args.get('resume')
+
+    if not resume_name:
+        return "Resume not specified.", 400
+    print("ANALYSIS", analysis)
+    resume_data = analysis.get(resume_name)
+
+    if not resume_data:
+        return "Resume details not found.", 404
+
+    # Pass data to the template
+    return render_template('detail.html', data=resume_data)
 
 
 if __name__ == '__main__':

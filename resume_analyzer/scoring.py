@@ -139,14 +139,15 @@ class ResumeScorer:
             ),
             "resume_ner": resume.get("ner", ""),
             "job_ner": job_description.get("ner", ""),
+            "contact": resume.get("contact", ""),
         }
 
         # Weighted average score
         weights = {
             "skills_match": 0.6,
-            "experience_match": 0.1,
-            "education_match": 0.1,
-            "job_title_relevance": 0.1,
+            "experience_match": 0.0,
+            "education_match": 0.15,
+            "job_title_relevance": 0.15,
             "overall_similarity": 0.1,
         }
 
