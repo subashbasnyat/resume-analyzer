@@ -2,7 +2,7 @@
 
 The Resume Analyzer is a machine learning project designed to evaluate resumes and provide insights such as skill matching, role fit, and automated feedback based on job descriptions. This tool helps recruiters and applicants streamline the hiring process.
 
-Features:s
+Features of the project:
     - Extracting information from resumes (e.g., skills, education, experience).
     - Matching resumes with job descriptions.
     - Scoring resumes based on predefined criteria.
