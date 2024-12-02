@@ -8,13 +8,6 @@ Features of the project:
     - Scoring resumes based on predefined criteria.
     - Suggesting improvements for better alignment with job roles.
 
-Steps to Run Flask App with Poetry
-    -  pip install poetry
-    - poetry install
-    - poetry run python app.py
-    A http link will be provided and once you click on that link, the Flask app will be opened in the browser:
-    - http://127.0.0.1:5000/
-
 # Usage
 
 1. Install the requirements
@@ -24,8 +17,10 @@ pip install poetry
 poetry install
 ```
 
-4. Run the processing script
-
-```bash
-poetry run python process.py
+2. Steps to Run Flask App with Poetry
 ```
+ pip install poetry
+ poetry install
+ poetry run python app.py
+```
+Once the app is running, open the provided HTTP link in your browser to access the Resume Analyzer: [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
